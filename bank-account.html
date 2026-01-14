@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Open a Portuguese Bank Account Remotely | WelBridge</title>
+  <meta name="description" content="Open your Portuguese bank account remotely with WelBridge. Full assistance with Novo Banco, from application to activation, 100% online.">
+
+  <link rel="icon" href="images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1D3557;
+      --primary-light: #2A4A73;
+      --premium: #DAA520;
+      --premium-dark: #B8860B;
+      --text: #1D3557;
+      --text-light: #5A6C7D;
+      --background: #FAF8F5;
+      --white: #FFFFFF;
+      --border: #E8E4DE;
+      --success: #2E7D32;
+      --warning: #D97706;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body { width: 100%; overflow-x: hidden; }
+    img, svg, video, canvas { max-width: 100%; height: auto; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* =========================
+       HEADER - CORRIGIDO (TRANSPARENTE + SCROLL)
+    ========================= */
+    .header {
+      background: transparent;
+      padding: 16px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      transition: background 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: var(--primary);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    /* =========================
+       NAV LINK - CORRIGIDO (SUBLINHADO)
+    ========================= */
+    .nav-link {
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--premium);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover { 
+      color: var(--premium); 
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active { 
+      color: white; 
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .btn-premium {
+      background: linear-gradient(135deg, var(--premium) 0%, var(--premium-dark) 100%);
+      color: var(--primary);
+      box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    }
+    .btn-premium:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-large { padding: 16px 32px; font-size: 1.1rem; }
+    .btn-full { width: 100%; justify-content: center; }
+
+    /* Language Switcher */
+    .lang-switch {
+      display: flex;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .lang-btn.active { background: rgba(255,255,255,0.2); color: white; }
+    .lang-btn:hover { color: white; }
+
+    /* =========================
+       NAVIGATION & DROPDOWN
+    ========================= */
+    .nav-main { display: none; }
+    @media (min-width: 1024px) { .nav-main { display: block; } }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > .nav-link { display: flex; align-items: center; gap: 0.375rem; }
+    .nav-dropdown > .nav-link svg { transition: transform 0.3s ease; }
+    .nav-dropdown:hover > .nav-link svg { transform: rotate(180deg); }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 340px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      z-index: 2500;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-grid { display: grid; grid-template-columns: 1fr; gap: 0.125rem; }
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .dropdown-item:hover { background: var(--background); }
+
+    .dropdown-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--background);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .dropdown-item:hover .dropdown-icon { background: var(--primary); }
+
+    .dropdown-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary);
+      transition: all 0.3s ease;
+    }
+    .dropdown-item:hover .dropdown-icon svg { stroke: white; }
+
+    .dropdown-text { display: flex; flex-direction: column; }
+    .dropdown-text strong { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+    .dropdown-text span { font-size: 0.75rem; color: var(--text-light); margin-top: 0.125rem; }
+
+    @media (max-width: 1023px) { .dropdown-menu { display: none; } }
+
+    /* =========================
+       MOBILE TOGGLE
+    ========================= */
+    .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    @media (min-width: 1024px) { .mobile-toggle { display: none; } }
+
+    .mobile-toggle span {
+      position: relative;
+      width: 20px;
+      height: 2px;
+      background: white;
+      transition: 0.3s ease;
+    }
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: white;
+      transition: 0.3s ease;
+    }
+    .mobile-toggle span::before { top: -6px; }
+    .mobile-toggle span::after { bottom: -6px; }
+
+    .mobile-toggle.active span { background: transparent; }
+    .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+    .mobile-toggle.active span::after { bottom: 0; transform: rotate(-45deg); }
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 3000;
+      padding: 96px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      width: 100vw;
+    }
+
+    .mobile-menu.active { transform: translateX(0); }
+
+    /* Mobile Menu Close Button */
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .mobile-menu-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-menu-close svg {
+      color: white;
+    }
+
+    .mobile-menu-links {
+      flex: 1;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobile-menu-links > li { margin-bottom: 24px; }
+    .mobile-menu-links > li > a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+    }
+
+    .mobile-menu-footer {
+      position: sticky;
+      bottom: 0;
+      padding-top: 16px;
+      padding-bottom: 8px;
+      background: var(--primary);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-menu-footer .btn { width: 100%; justify-content: center; }
+
+    /* =========================
+       MOBILE DROPDOWN
+    ========================= */
+    .mobile-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .mobile-dropdown-toggle svg { transition: transform 0.3s ease; flex-shrink: 0; }
+    .mobile-dropdown.active .mobile-dropdown-toggle svg { transform: rotate(180deg); }
+
+    .mobile-dropdown-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding-left: 16px;
+      margin-top: 0;
+      list-style: none;
+    }
+    .mobile-dropdown.active .mobile-dropdown-menu { max-height: 700px; margin-top: 16px; }
+
+    .mobile-dropdown-menu li { margin-bottom: 14px; }
+    .mobile-dropdown-menu a {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+    .mobile-dropdown-menu a:hover { color: var(--premium); }
+
+    /* =========================
+       HERO
+    ========================= */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(218,165,32,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(218, 165, 32, 0.15);
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--premium);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--premium); }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .hero-ctas { display: flex; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+
+    .hero-features { display: flex; flex-direction: column; gap: 12px; }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+    }
+    .hero-feature svg { width: 20px; height: 20px; color: var(--premium); flex-shrink: 0; }
+
+    .hero-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+      max-width: 100%;
+    }
+
+    .bank-card-preview {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 16px;
+      padding: 30px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .bank-card-preview::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(218,165,32,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .bank-card-chip {
+      width: 50px;
+      height: 40px;
+      background: linear-gradient(135deg, #DAA520 0%, #F4D03F 100%);
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .bank-card-number {
+      font-family: 'Inter', monospace;
+      font-size: 1.4rem;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .bank-card-details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      gap: 12px;
+    }
+
+    .bank-card-flag {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 2rem;
+    }
+
+    .bank-card-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--premium);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .benefits-section { padding: 100px 0; background: var(--white); }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+
+    .benefit-card {
+      text-align: center;
+      padding: 40px 30px;
+      border-radius: 16px;
+      background: var(--background);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(29, 53, 87, 0.1);
+      border-color: var(--premium);
+    }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .benefit-icon svg { width: 32px; height: 32px; color: var(--premium); }
+
+    .benefit-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--primary); }
+    .benefit-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+
+    .partner-section { padding: 80px 0; background: var(--white); text-align: center; }
+    .partner-card {
+      display: inline-block;
+      background: var(--background);
+      padding: 40px 60px;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      max-width: 100%;
+    }
+    .partner-card h3 { font-size: 2rem; color: var(--primary); margin-bottom: 12px; }
+    .partner-stats { display: flex; justify-content: center; gap: 40px; color: var(--text-light); font-size: 0.9rem; flex-wrap: wrap; }
+
+    .pricing-section { padding: 100px 0; background: var(--background); }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 60px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      border: 2px solid var(--premium);
+      box-shadow: 0 25px 80px rgba(218, 165, 32, 0.15);
+      position: relative;
+      width: 100%;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--premium);
+      color: var(--primary);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .pricing-title { font-size: 1.8rem; color: var(--primary); margin-bottom: 12px; }
+    .pricing-subtitle { color: var(--text-light); margin-bottom: 32px; }
+
+    .pricing-amount { margin-bottom: 32px; }
+    .pricing-value { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 700; color: var(--primary); }
+    .pricing-currency { font-size: 2rem; vertical-align: top; }
+    .pricing-period { display: block; color: var(--text-light); font-size: 0.95rem; margin-top: 8px; }
+
+    .pricing-features { list-style: none; text-align: left; margin-bottom: 40px; }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .pricing-features svg { width: 24px; height: 24px; color: var(--success); flex-shrink: 0; margin-top: 2px; }
+
+    .process-section { padding: 100px 0; background: var(--white); }
+
+    .process-timeline {
+      max-width: 800px;
+      margin: 60px auto 0;
+      position: relative;
+      width: 100%;
+    }
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--premium) 0%, var(--primary) 50%, var(--premium) 100%);
+    }
+
+    .process-step { display: flex; gap: 32px; margin-bottom: 40px; position: relative; width: 100%; }
+    .process-step:last-child { margin-bottom: 0; }
+
+    .process-step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--white);
+      border: 3px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step-final .process-step-number {
+      background: var(--premium);
+      border-color: var(--premium);
+      color: var(--primary);
+    }
+
+    .process-step-content {
+      background: var(--background);
+      border-radius: 16px;
+      padding: 28px 32px;
+      flex: 1;
+      border-left: 4px solid var(--premium);
+      box-shadow: 0 4px 20px rgba(29, 53, 87, 0.06);
+      transition: all 0.3s ease;
+      max-width: 100%;
+    }
+    .process-step-content:hover { box-shadow: 0 8px 30px rgba(29, 53, 87, 0.1); transform: translateX(5px); }
+
+    .process-step-final .process-step-content {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-left-color: var(--premium);
+    }
+    .process-step-final .process-step-content h3 { color: var(--white); }
+    .process-step-final .process-step-content p { color: rgba(255,255,255,0.85); }
+
+    .process-step-content h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; }
+    .process-step-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; }
+
+    .requirements-section { padding: 100px 0; background: var(--background); }
+
+    .requirements-cards {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .requirement-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px;
+      border-left: 4px solid var(--premium);
+      display: flex;
+      gap: 24px;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: 0 10px 40px rgba(29, 53, 87, 0.06);
+    }
+    .requirement-card:hover { box-shadow: 0 12px 50px rgba(29, 53, 87, 0.10); transform: translateX(5px); }
+
+    .requirement-card-highlight {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-left-color: var(--premium);
+    }
+    .requirement-card-highlight .requirement-card-content h3 { color: var(--white); }
+    .requirement-card-highlight .requirement-card-content p { color: rgba(255,255,255,0.85); }
+    .requirement-card-highlight .requirement-card-content a { color: var(--premium); }
+    .requirement-card-highlight .requirement-card-icon { background: rgba(218, 165, 32, 0.2); }
+    .requirement-card-highlight .requirement-card-icon svg { color: var(--premium); }
+
+    .requirement-card-note { background: var(--white); border: 2px solid var(--border); border-left: 4px solid var(--premium); }
+
+    .requirement-card-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--background);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .requirement-card-icon svg { width: 28px; height: 28px; color: var(--primary); }
+
+    .requirement-card-content { flex: 1; min-width: 0; }
+    .requirement-card-content h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 12px; }
+    .requirement-card-content p { color: var(--text-light); font-size: 0.95rem; line-height: 1.8; }
+    .requirement-card-content a { color: var(--premium); font-weight: 600; text-decoration: none; }
+    .requirement-card-content a:hover { text-decoration: underline; }
+
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list { max-width: 800px; margin: 60px auto 0; width: 100%; }
+
+    .faq-item {
+      background: var(--background);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: inherit;
+      gap: 16px;
+    }
+
+    .faq-question svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      color: var(--premium);
+    }
+
+    .faq-item.active .faq-question svg { transform: rotate(45deg); }
+
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: var(--text-light);
+      display: none;
+      line-height: 1.8;
+    }
+    .faq-item.active .faq-answer { display: block; }
+
+    /* =========================
+       CONTACT SECTION
+    ========================= */
+    .contact-section {
+      padding: 100px 0;
+      background: var(--background);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contact-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .contact-features {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .contact-feature svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--premium);
+      flex-shrink: 0;
+    }
+
+    .contact-info { margin-top: 32px; }
+
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .contact-info-item svg { width: 20px; height: 20px; color: var(--premium); }
+    .contact-info-item span { color: var(--text); font-size: 1rem; }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(29, 53, 87, 0.08);
+    }
+
+    .contact-form-card h4 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--premium);
+    }
+
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231D3557' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+      padding-right: 45px;
+    }
+
+    .form-group textarea { resize: vertical; }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-consent input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      cursor: pointer;
+      accent-color: var(--premium);
+      flex-shrink: 0;
+    }
+
+    .form-consent label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .form-consent a {
+      color: var(--premium);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .form-consent a:hover { text-decoration: underline; }
+
+    /* =========================
+       CTA
+    ========================= */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .cta-section h2 { font-size: 2.5rem; color: var(--white); margin-bottom: 20px; }
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    .footer {
+      background: var(--primary);
+      padding: 60px 0 30px;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .footer-brand p { color: rgba(255,255,255,0.7); margin-top: 16px; font-size: 0.9rem; }
+
+    .footer-column h4 {
+      color: var(--premium);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column ul { list-style: none; }
+    .footer-column li { margin-bottom: 12px; }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .footer-column a:hover { color: var(--premium); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 992px) {
+      .nav-links { display: none; }
+
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-card { display: none; }
+      .hero-ctas { justify-content: center; }
+      .hero-features { align-items: center; }
+
+      .benefits-grid { grid-template-columns: 1fr; }
+
+      .process-timeline::before { left: 24px; }
+      .requirement-card { flex-direction: column; gap: 16px; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .logo img { height: 44px; }
+      .nav-actions .btn { display: none; }
+      .lang-btn { padding: 6px 10px; font-size: 0.8rem; }
+
+      .hero { padding: 100px 0 60px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-description { font-size: 1rem; }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 { font-size: 1.75rem; }
+      .section-title { font-size: 1.8rem; }
+      .pricing-card { padding: 40px 24px; }
+      .pricing-value { font-size: 3rem; }
+
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .process-step { gap: 20px; }
+      .process-step-content { padding: 20px 24px; }
+      .requirement-card { padding: 24px; }
+
+      .contact-form-card { padding: 24px; }
+    }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+      </a>
+
+      <nav class="nav-main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link active" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+
+            <div class="dropdown-menu" role="menu" aria-label="Services">
+              <div class="dropdown-grid">
+                <a href="nif.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path></svg></div>
+                  <div class="dropdown-text"><strong>NIF</strong><span>Portuguese Tax Number</span></div>
+                </a>
+                <a href="tax-representative.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                  <div class="dropdown-text"><strong>NIF Tax Representative</strong><span>Stay compliant with AT</span></div>
+                </a>
+                <a href="nif-address-update.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                  <div class="dropdown-text"><strong>NIF Address Update</strong><span>Change your fiscal address</span></div>
+                </a>
+                <a href="niss.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div>
+                  <div class="dropdown-text"><strong>NISS</strong><span>Social Security Number</span></div>
+                </a>
+                <a href="bank-account.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"></rect><path d="M1 10h22"></path></svg></div>
+                  <div class="dropdown-text"><strong>Bank Account</strong><span>Open 100% remotely</span></div>
+                </a>
+                <a href="document-certification.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+                  <div class="dropdown-text"><strong>Certification & Authentication</strong><span>Document legalization</span></div>
+                </a>
+                <a href="criminal-record.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+                  <div class="dropdown-text"><strong>Criminal Record Certificate</strong><span>Official background check</span></div>
+                </a>
+                <a href="citizenship.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+                  <div class="dropdown-text"><strong>Portuguese Citizenship</strong><span>Path to EU passport</span></div>
+                </a>
+                <a href="lease-review.html" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                  <div class="dropdown-text"><strong>Lease Agreement Review</strong><span>Protect your rental rights</span></div>
+                </a>
+                <a href="index.html#contact" class="dropdown-item">
+                  <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><circle cx="12" cy="14" r="3"></circle></svg></div>
+                  <div class="dropdown-text"><strong>Real Estate Advisory</strong><span>Find your perfect property</span></div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <a href="bank-account.html" class="lang-btn active">EN</a>
+          <a href="bank-account-pt.html" class="lang-btn">PT</a>
+        </div>
+        <a href="#contact" class="btn btn-premium">Free Consultation</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="mobile-dropdown">
+        <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+          Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="nif.html">NIF</a></li>
+          <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+          <li><a href="nif-address-update.html">NIF Address Update</a></li>
+          <li><a href="niss.html">NISS</a></li>
+          <li><a href="bank-account.html">Bank Account</a></li>
+          <li><a href="document-certification.html">Certification & Authentication</a></li>
+          <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+          <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+          <li><a href="lease-review.html">Lease Agreement Review</a></li>
+          <li><a href="index.html#contact">Real Estate Advisory</a></li>
+        </ul>
+      </li>
+      <li><a href="visa-all.html">Visas</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <a href="#contact" class="btn btn-premium">Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+            </svg>
+            Exclusive Novo Banco Partnership
+          </div>
+
+          <h1>Open Your <span>Portuguese Bank Account</span> Remotely</h1>
+          <p class="hero-description">Access Portuguese banking without traveling to Portugal. We manage everything with Novo Banco — from paperwork to account activation, all done online.</p>
+
+          <div class="hero-ctas">
+            <a href="https://buy.stripe.com/eVq6oH88W75VcoK6i1eIw06" class="btn btn-premium btn-large">
+              Get Started
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </a>
+            <a href="#process" class="btn btn-outline-white btn-large">How It Works</a>
+          </div>
+
+          <div class="hero-features">
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              No visit to Portugal needed
+            </div>
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Full digital banking access
+            </div>
+            <div class="hero-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              International debit card included
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="bank-card-preview">
+            <div class="bank-card-chip"></div>
+            <div class="bank-card-number">•••• •••• •••• 4521</div>
+            <div class="bank-card-details">
+              <div><small>CARD HOLDER</small><div>YOUR NAME</div></div>
+              <div><small>VALID THRU</small><div>12/28</div></div>
+            </div>
+            <div class="bank-card-flag">🇵🇹</div>
+            <div class="bank-card-logo">Novo Banco</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why You Need It</span>
+        <h2 class="section-title">Your Gateway to European Banking</h2>
+        <p class="section-subtitle">A Portuguese bank account opens doors across Europe and simplifies your life in Portugal.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+          <h3>European Transfers</h3>
+          <p>Send and receive money across 36 SEPA countries with minimal fees and fast processing times.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+          <h3>Real Estate Purchases</h3>
+          <p>Required for buying property in Portugal. Handle deposits, mortgage payments, and notary fees directly.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 10h20"></path></svg></div>
+          <h3>Daily Life Services</h3>
+          <p>Pay utilities, phone bills, subscriptions, and set up direct debits for rent and other regular expenses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <section class="partner-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Banking Partner</span>
+        <h2 class="section-title">Working Exclusively with Novo Banco</h2>
+      </div>
+      <div class="partner-card">
+        <h3>Novo Banco</h3>
+        <div class="partner-stats"><span>2M+ Customers</span><span>•</span><span>350+ Branches</span><span>•</span><span>Modern Digital Platform</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Service Fee</span>
+        <h2 class="section-title">Complete Account Opening</h2>
+        <p class="section-subtitle">One transparent price with no hidden fees. Everything handled for you.</p>
+      </div>
+
+      <div class="pricing-card">
+        <span class="pricing-badge">All-Inclusive</span>
+        <h3 class="pricing-title">Novo Banco Account Setup</h3>
+        <p class="pricing-subtitle">Full assistance from application to activation</p>
+        <div class="pricing-amount">
+          <span class="pricing-value"><span class="pricing-currency">€</span>250</span>
+          <span class="pricing-period">one-time payment • bank fees separate</span>
+        </div>
+        <ul class="pricing-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Personal account manager throughout the process</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Complete application preparation and review</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Direct communication with Novo Banco</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Online banking setup assistance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Debit card delivery coordination</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Ongoing support until account is fully active</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVq6oH88W75VcoK6i1eIw06" class="btn btn-premium btn-large">Start Your Application</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Your Account in 7 Straightforward Steps</h2>
+        <p class="section-subtitle">From first click to full banking access — here's exactly what happens.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-step-number">1</div>
+          <div class="process-step-content"><h3>Submit Your Request</h3><p>Start by completing the payment and providing your information through our encrypted online application. This takes about 10 minutes.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">2</div>
+          <div class="process-step-content"><h3>Identity Confirmation</h3><p>Our team will guide you through a brief verification process to confirm your identity and review your submitted documents.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">3</div>
+          <div class="process-step-content"><h3>Bank Contact Verification</h3><p>Novo Banco will reach out to validate your phone number and email address — a standard security measure for all new accounts.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">4</div>
+          <div class="process-step-content"><h3>Account Agreement Delivery</h3><p>Once approved, the bank sends the official account opening contract and related paperwork directly to your email inbox.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">5</div>
+          <div class="process-step-content"><h3>Document Signing</h3><p>Print the contract, review the terms carefully, and sign in the designated areas. We'll guide you on exactly where to sign.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-number">6</div>
+          <div class="process-step-content"><h3>Send to Our Portuguese Partner</h3><p>Mail the signed paperwork to our legal partner in Lisbon. They'll certify your signature locally — no need for expensive Apostille authentication.</p></div>
+        </div>
+        <div class="process-step process-step-final">
+          <div class="process-step-number">7</div>
+          <div class="process-step-content"><h3>Welcome to Portuguese Banking!</h3><p>Your account is live! You'll receive your IBAN, online banking credentials, and your international debit card will be shipped to your address.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section class="requirements-section" id="requirements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Documentation</span>
+        <h2 class="section-title">What You'll Need to Apply</h2>
+        <p class="section-subtitle">Prepare these documents before starting. We'll review everything and guide you if anything needs adjustment.</p>
+      </div>
+
+      <div class="requirements-cards">
+        <div class="requirement-card requirement-card-highlight">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
+          <div class="requirement-card-content"><h3>Important: Non-EU Nationals</h3><p>If you hold a passport from outside the European Union and don't currently reside in an EU country, we can only proceed if you can demonstrate that you're in the process of obtaining a Portuguese visa. You'll need to provide proof your visa application is underway, plus supporting documents for your visa category.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+          <div class="requirement-card-content"><h3>Passport Scan</h3><p>High-quality scanned copy of your valid passport. Phone photos are typically not accepted. Include ID page, signature page, MRZ line, and any pages with stamps/visas.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+          <div class="requirement-card-content"><h3>Proof of Current Address</h3><p>Utility bill / bank statement / government correspondence dated within the last 3 months, showing your full name and full address.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div>
+          <div class="requirement-card-content"><h3>Proof of Employment or Financial Means</h3><p>Payslips / contract / employer letter, or for self-employed: tax returns / accounts. For retirees/savings: statements proving sufficient funds.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+          <div class="requirement-card-content"><h3>Portuguese Tax Identification Number (NIF)</h3><p>A NIF is mandatory for opening any bank account in Portugal. If you don't have a NIF yet, we can help: <a href="nif.html">Apply for your Portuguese NIF</a>.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
+          <div class="requirement-card-content"><h3>Tax ID from Your Country (TIN)</h3><p>If you're tax resident outside Portugal, provide your foreign tax identification number (TIN). The country should match the country of residence listed on your NIF certificate.</p></div>
+        </div>
+        <div class="requirement-card">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+          <div class="requirement-card-content"><h3>For Non-EU Citizens: Proof of Immigration Intent</h3><p>Proof you are actively pursuing legal residence in Portugal (e.g., consulate/VFS appointment, visa fee receipt, or a visa sticker). <a href="bank-account-requirements.html">Learn more</a></p></div>
+        </div>
+        <div class="requirement-card requirement-card-note">
+          <div class="requirement-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+          <div class="requirement-card-content"><h3>Language Requirements</h3><p>Documents must be in English, Spanish, French, or Portuguese. Otherwise, certified translations are required.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Questions About Bank Accounts</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question" type="button">Can I open an account without going to Portugal?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <div class="faq-answer">Yes. Novo Banco allows remote account opening for non-residents. In some cases, a video call with the bank may be required for identity verification.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">How long does the whole process take?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <div class="faq-answer">Most accounts are fully active within 2–4 weeks after you submit complete documentation. Timelines vary by bank queue and document completeness.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">Why only Novo Banco?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <div class="faq-answer">Our partnership means a streamlined process, clearer requirements, and faster coordination. Novo Banco also offers strong digital banking for non-residents.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">What bank fees should I expect?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <div class="faq-answer">Fees depend on the account plan (monthly maintenance + card/transactions). We explain expected costs during your consultation so you know exactly what to expect.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">Do I need a NIF before applying?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <div class="faq-answer">Yes. A Portuguese NIF is required for any bank account in Portugal. If you don't have one, we can handle NIF + bank account as a combined process.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-content">
+          <span class="section-label">Get Started</span>
+          <h2 class="section-title">Ready to Open Your Account?</h2>
+          <p>Ask questions, confirm eligibility, and start with confidence. We'll guide you end-to-end.</p>
+          <div class="contact-features">
+            <div class="contact-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>100% remote support</div>
+            <div class="contact-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Document review + bank coordination</div>
+            <div class="contact-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Clear timeline and next steps</div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-info-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@welbridge.com</span></div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="bot-field"><input type="hidden" name="form-name" value="contact">
+            <h4>Free Consultation</h4>
+            <div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" placeholder="Your name" required></div>
+            <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+            <div class="form-group"><label for="service">Service Interest</label><select id="service" name="service" required><option value="">Select a service...</option><option value="NIF Standard (€45)">NIF Standard (€45)</option><option value="NIF Express (€67)">NIF Express (€67)</option><option value="NISS (Social Security)">NISS (Social Security)</option><option value="Bank Account" selected>Bank Account</option><option value="D7 Visa">D7 Visa</option><option value="D2 Visa">D2 Visa</option><option value="Digital Nomad Visa">Digital Nomad Visa</option><option value="Real Estate Advisory">Real Estate Advisory</option><option value="Citizenship">Citizenship</option><option value="Other / Not Sure">Other / Not Sure</option></select></div>
+            <div class="form-group"><label for="message">Your Question</label><textarea id="message" name="message" rows="4" placeholder="Tell us your nationality, residency, and if you have a visa process underway."></textarea></div>
+            <div class="form-consent"><input type="checkbox" id="consent" name="consent" required><label for="consent">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a> provided by WelBridge.</label></div>
+            <button type="submit" class="btn btn-premium btn-full btn-large">Submit Request<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Start Your Application Today</h2>
+      <p>Join thousands who opened Portuguese bank accounts through WelBridge. If you're ready, proceed to checkout. If not, talk to us first.</p>
+      <div class="cta-buttons">
+        <a href="https://buy.stripe.com/eVq6oH88W75VcoK6i1eIw06" class="btn btn-premium btn-large">Start Your Application</a>
+        <a href="#contact" class="btn btn-outline-white btn-large">Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="images/WB_Concept_1_White.svg" alt="WelBridge"></a>
+          <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+        </div>
+        <div class="footer-column"><h4>Services</h4><ul><li><a href="nif.html">Portugal NIF</a></li><li><a href="bank-account.html">Bank Account</a></li><li><a href="niss.html">NISS Registration</a></li><li><a href="tax-representative.html">Tax Representative</a></li></ul></div>
+        <div class="footer-column"><h4>Visas</h4><ul><li><a href="d7-visa.html">D7 Visa</a></li><li><a href="d2-visa.html">D2 Visa</a></li><li><a href="digital-nomad-visa.html">Digital Nomad</a></li><li><a href="citizenship.html">Citizenship</a></li></ul></div>
+        <div class="footer-column"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 WelBridge. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // SCROLL - Header fica com fundo sólido
+      const header = document.getElementById('header');
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.parentElement;
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+      const setAria = () => {
+        if (!mobileToggle || !mobileMenu) return;
+        const isOpen = mobileMenu.classList.contains('active');
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      };
+
+      const closeMobileMenu = () => {
+        if (!mobileMenu || !mobileToggle) return;
+        mobileMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        setAria();
+      };
+
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = !mobileMenu.classList.contains('active');
+          mobileToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+          setAria();
+        });
+      }
+
+      // Close button click
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Mobile Dropdown Toggle
+      document.querySelectorAll('.mobile-dropdown-toggle').forEach((button) => {
+        button.addEventListener('click', () => {
+          const dropdown = button.parentElement;
+          const isActive = dropdown.classList.toggle('active');
+          button.setAttribute('aria-expanded', String(isActive));
+        });
+      });
+
+      // Fecha menu mobile ao clicar em qualquer link dentro dele
+      document.querySelectorAll('#mobileMenu a').forEach((a) => {
+        a.addEventListener('click', closeMobileMenu);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href !== '#' && href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              closeMobileMenu();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+      // Fix para link index.html#about / index.html#contact funcionar na homepage
+      document.querySelectorAll('a[href="index.html#contact"], a[href="index.html#about"]').forEach((link) => {
+        link.addEventListener('click', function (e) {
+          const path = window.location.pathname;
+          if (path.endsWith('index.html') || path === '/' || path.endsWith('/')) {
+            e.preventDefault();
+            const hash = this.getAttribute('href').split('#')[1];
+            const target = document.getElementById(hash);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // ESC fecha menu
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

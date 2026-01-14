@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Document Certification & Authentication | WelBridge</title>
+    <meta name="description" content="Professional document certification, authentication and apostille services for Portugal. Ensure your documents are legally valid across borders.">
+    
+    <link rel="icon" href="images/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1D3557;
+            --primary-light: #2A4A73;
+            --premium: #DAA520;
+            --premium-dark: #B8860B;
+            --text: #1D3557;
+            --text-light: #5A6C7D;
+            --background: #FAF8F5;
+            --white: #FFFFFF;
+            --border: #E8E4DE;
+            --success: #2E7D32;
+            --warning: #D97706;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           HEADER - CORRIGIDO (TRANSPARENTE + SCROLL)
+        ========================= */
+        .header {
+            background: transparent;
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            transition: background 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: var(--primary);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        /* =========================
+           NAV LINK - CORRIGIDO (SUBLINHADO)
+        ========================= */
+        .nav-link {
+            position: relative;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--premium);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover { 
+            color: var(--premium); 
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active { 
+            color: white; 
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--premium) 0%, var(--premium-dark) 100%);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: var(--white);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+
+        .btn-full { width: 100%; justify-content: center; }
+        .btn-large { padding: 16px 32px; font-size: 1.1rem; }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            padding: 8px 12px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .lang-btn:hover { color: white; }
+
+        /* =========================
+           NAVIGATION & DROPDOWN (DESKTOP)
+        ========================= */
+        .nav-main { display: none; }
+        @media (min-width: 1024px) { .nav-main { display: block; } }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > .nav-link { display: flex; align-items: center; gap: 0.375rem; }
+        .nav-dropdown > .nav-link svg { transition: transform 0.3s ease; }
+        .nav-dropdown:hover > .nav-link svg { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            width: 340px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            z-index: 2500;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-grid { display: grid; grid-template-columns: 1fr; gap: 0.125rem; }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover { background: var(--background); }
+
+        .dropdown-icon {
+            width: 40px; height: 40px;
+            background: var(--background);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover .dropdown-icon { background: var(--primary); }
+        .dropdown-icon svg { width: 20px; height: 20px; stroke: var(--primary); transition: all 0.3s ease; }
+        .dropdown-item:hover .dropdown-icon svg { stroke: white; }
+
+        .dropdown-text { display: flex; flex-direction: column; }
+        .dropdown-text strong { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+        .dropdown-text span { font-size: 0.75rem; color: var(--text-light); margin-top: 0.125rem; }
+
+        @media (max-width: 1023px) { .dropdown-menu { display: none; } }
+
+        /* =========================
+           MOBILE TOGGLE
+        ========================= */
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 1024px) { .mobile-toggle { display: none; } }
+
+        .mobile-toggle span {
+            position: relative;
+            width: 20px; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before { top: -6px; }
+        .mobile-toggle span::after { bottom: -6px; }
+        .mobile-toggle.active span { background: transparent; }
+        .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+        .mobile-toggle.active span::after { bottom: 0; transform: rotate(-45deg); }
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 3000;
+            padding: 96px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            width: 100vw;
+        }
+
+        .mobile-menu.active { transform: translateX(0); }
+
+        /* Mobile Menu Close Button */
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-close svg {
+            color: white;
+        }
+
+        .mobile-menu-links { flex: 1; list-style: none; margin: 0; padding: 0; }
+        .mobile-menu-links > li { margin-bottom: 24px; }
+        .mobile-menu-links > li > a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+        }
+
+        .mobile-menu-footer {
+            position: sticky;
+            bottom: 0;
+            padding-top: 16px;
+            padding-bottom: 8px;
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .mobile-menu-footer .btn { width: 100%; justify-content: center; }
+
+        /* =========================
+           MOBILE DROPDOWN
+        ========================= */
+        .mobile-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-toggle svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .mobile-dropdown.active .mobile-dropdown-toggle svg { transform: rotate(180deg); }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding-left: 16px;
+            margin-top: 0;
+            list-style: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-menu { max-height: 700px; margin-top: 16px; }
+        .mobile-dropdown-menu li { margin-bottom: 14px; }
+        .mobile-dropdown-menu a {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        .mobile-dropdown-menu a:hover { color: var(--premium); }
+
+        /* =========================
+           RESPONSIVE HEADER
+        ========================= */
+        @media (max-width: 768px) {
+            .logo img { height: 44px; }
+            .header-right .btn { display: none; }
+            .lang-btn { padding: 6px 10px; font-size: 0.8rem; }
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+        .hero {
+            padding: 140px 0 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(218,165,32,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(218, 165, 32, 0.2);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--premium);
+            margin-bottom: 28px;
+        }
+
+        .hero-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--premium); }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           SECTION STYLES
+        ========================= */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--premium);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .why-text p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .why-highlight {
+            background: var(--background);
+            border-left: 4px solid var(--premium);
+            padding: 20px 24px;
+            margin-top: 24px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .why-highlight p {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .why-visual { position: relative; }
+
+        .document-stack {
+            position: relative;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .doc-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 20px 50px rgba(29, 53, 87, 0.15);
+            position: relative;
+        }
+
+        .doc-card:nth-child(1) { transform: rotate(-3deg); z-index: 3; }
+        .doc-card:nth-child(2) { position: absolute; top: 20px; left: 20px; transform: rotate(2deg); z-index: 2; opacity: 0.7; }
+        .doc-card:nth-child(3) { position: absolute; top: 40px; left: 40px; transform: rotate(5deg); z-index: 1; opacity: 0.4; }
+
+        .doc-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .doc-seal {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doc-seal svg {
+            width: 26px;
+            height: 26px;
+            color: var(--premium);
+        }
+
+        .doc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .doc-lines { margin-bottom: 20px; }
+
+        .doc-line {
+            height: 10px;
+            background: var(--border);
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .doc-line:nth-child(1) { width: 100%; }
+        .doc-line:nth-child(2) { width: 80%; }
+        .doc-line:nth-child(3) { width: 90%; }
+
+        .doc-stamp {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            border: 3px solid var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-15deg);
+        }
+
+        .doc-stamp span {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--success);
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            border-color: var(--premium);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(29, 53, 87, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .service-icon svg {
+            width: 36px;
+            height: 36px;
+            color: var(--premium);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Common Documents Section */
+        .documents-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: var(--background);
+            border-radius: 12px;
+            border-left: 4px solid var(--premium);
+            transition: all 0.3s ease;
+        }
+
+        .doc-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px rgba(29, 53, 87, 0.08);
+        }
+
+        .doc-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--success);
+            flex-shrink: 0;
+        }
+
+        .doc-item span {
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(29, 53, 87, 0.1);
+        }
+
+        .contact-card h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .contact-card > p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--premium);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231D3557' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 45px;
+        }
+
+        .form-group textarea { resize: vertical; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-consent input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: var(--premium);
+            flex-shrink: 0;
+        }
+
+        .form-consent label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .form-consent a {
+            color: var(--premium);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .form-consent a:hover { text-decoration: underline; }
+
+        .contact-email {
+            margin-top: 32px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .contact-info-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--premium);
+        }
+
+        .contact-info-item span {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+
+        .cta-price {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cta-price span {
+            color: var(--premium);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            padding: 60px 0 30px;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h4 {
+            color: var(--premium);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--premium); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.5rem; }
+            .why-content { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .documents-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .contact-card { padding: 32px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+            </a>
+
+            <nav class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link active">
+                            Services
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <a href="nif.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                            <path d="M3 10h18"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF</strong>
+                                        <span>Portuguese Tax Number</span>
+                                    </div>
+                                </a>
+                                <a href="tax-representative.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF Tax Representative</strong>
+                                        <span>Stay compliant with AT</span>
+                                    </div>
+                                </a>
+                                <a href="nif-address-update.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF Address Update</strong>
+                                        <span>Change your fiscal address</span>
+                                    </div>
+                                </a>
+                                <a href="niss.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NISS</strong>
+                                        <span>Social Security Number</span>
+                                    </div>
+                                </a>
+                                <a href="bank-account.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                            <path d="M1 10h22"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Bank Account</strong>
+                                        <span>Open 100% remotely</span>
+                                    </div>
+                                </a>
+                                <a href="document-certification.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Certification & Authentication</strong>
+                                        <span>Document legalization</span>
+                                    </div>
+                                </a>
+                                <a href="criminal-record.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Criminal Record Certificate</strong>
+                                        <span>Official background check</span>
+                                    </div>
+                                </a>
+                                <a href="citizenship.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M2 12h20"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Portuguese Citizenship</strong>
+                                        <span>Path to EU passport</span>
+                                    </div>
+                                </a>
+                                <a href="lease-review.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9 22 9 12 15 12 15 22"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Lease Agreement Review</strong>
+                                        <span>Protect your rental rights</span>
+                                    </div>
+                                </a>
+                                <a href="index.html#contact" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <circle cx="12" cy="14" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Real Estate Advisory</strong>
+                                        <span>Find your perfect property</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="lang-switch">
+                    <a href="certification.html" class="lang-btn active">EN</a>
+                    <a href="certification-pt.html" class="lang-btn">PT</a>
+                </div>
+                <a href="#contact" class="btn btn-premium">Free Consultation</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+                    Services
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="nif.html">NIF</a></li>
+                    <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+                    <li><a href="nif-address-update.html">NIF Address Update</a></li>
+                    <li><a href="niss.html">NISS</a></li>
+                    <li><a href="bank-account.html">Bank Account</a></li>
+                    <li><a href="document-certification.html">Certification & Authentication</a></li>
+                    <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+                    <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+                    <li><a href="lease-review.html">Lease Agreement Review</a></li>
+                    <li><a href="index.html#contact">Real Estate Advisory</a></li>
+                </ul>
+            </li>
+            <li><a href="visa-all.html">Visas</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="#contact" class="btn btn-premium">Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Official & Legally Recognized
+                </div>
+                <h1>Document <span>Certification</span> & Authentication</h1>
+                <p class="hero-description">Ensure your documents are legally valid across borders. We handle apostilles, notarizations, and certifications so your paperwork is accepted wherever life takes you.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-premium btn-large">Request a Quote</a>
+                    <a href="#services" class="btn btn-outline-white btn-large">Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-content">
+                <div class="why-text">
+                    <span class="section-label">Why It Matters</span>
+                    <h2>A Document Without Proper Certification Is Just Paper</h2>
+                    <p>You've gathered all your important documents — birth certificates, diplomas, contracts, powers of attorney. But without proper certification and authentication, Portuguese authorities will simply reject them.</p>
+                    <p>For document copies to have legal validity in Portugal, they must be certified and authenticated. Government entities, banks, and institutions require proof that your documents are genuine reproductions of the originals.</p>
+                    <div class="why-highlight">
+                        <p>"We've seen visa applications denied, citizenship processes delayed, and bank account openings rejected — all because of missing certifications. Don't let paperwork be the obstacle to your goals."</p>
+                    </div>
+                </div>
+                <div class="why-visual">
+                    <div class="document-stack">
+                        <div class="doc-card">
+                            <div class="doc-header">
+                                <div class="doc-seal">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <span class="doc-title">Certified Document</span>
+                            </div>
+                            <div class="doc-lines">
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                                <div class="doc-line"></div>
+                            </div>
+                            <div class="doc-stamp">
+                                <span>Certified<br>Authentic</span>
+                            </div>
+                        </div>
+                        <div class="doc-card"></div>
+                        <div class="doc-card"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title">Our Authentication Services</h2>
+                <p class="section-subtitle">From simple notarizations to complex international certifications, we ensure your documents meet every requirement.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3>Document Certification</h3>
+                    <p>Official certification that confirms your document copies are true and accurate reproductions of the originals. Required by Portuguese authorities for legal validity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Document Authentication</h3>
+                    <p>Verification process that confirms the authenticity of your documents and signatures. Essential for documents to be accepted by government entities and institutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Certified Translation</h3>
+                    <p>Professional translation paired with official certification. Essential when submitting foreign-language documents to Portuguese authorities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Documents Section -->
+    <section class="documents-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Common Requests</span>
+                <h2 class="section-title">Documents We Frequently Certify</h2>
+                <p class="section-subtitle">We work with all types of personal, academic, and business documents.</p>
+            </div>
+            <div class="documents-grid">
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Birth & Marriage Certificates</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Academic Diplomas & Transcripts</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Criminal Record Certificates</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Powers of Attorney</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Corporate & Business Documents</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Medical & Health Records</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Property Deeds & Contracts</span>
+                </div>
+                <div class="doc-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Immigration & Visa Documents</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-card">
+                <h2>Request a Quote</h2>
+                <p>Tell us about your documents and certification needs. We'll respond with a personalized quote and timeline.</p>
+                
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="visa-type">Service Interest</label>
+                        <select id="visa-type" name="visa-type" required>
+                            <option value="">Select a service...</option>
+                            <option value="NIF Standard (€45)">NIF Standard (€45)</option>
+                            <option value="NIF Express (€67)">NIF Express (€67)</option>
+                            <option value="NISS (Social Security)">NISS (Social Security)</option>
+                            <option value="Bank Account">Bank Account</option>
+                            <option value="D7 Visa">D7 Visa</option>
+                            <option value="D2 Visa">D2 Visa</option>
+                            <option value="Digital Nomad Visa">Digital Nomad Visa</option>
+                            <option value="Document Certification" selected>Document Certification</option>
+                            <option value="Document Authentication">Document Authentication</option>
+                            <option value="Certified Translation">Certified Translation</option>
+                            <option value="Real Estate Advisory">Real Estate Advisory</option>
+                            <option value="Citizenship">Citizenship</option>
+                            <option value="Other / Not Sure">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Document Details</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Describe the documents you need certified (type, quantity, country of origin, destination country)..."></textarea>
+                    </div>
+                    <div class="form-consent">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a> provided by WelBridge.</label>
+                    </div>
+                    <button type="submit" class="btn btn-premium btn-full btn-large">
+                        Submit Request
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </form>
+                
+                <div class="contact-email">
+                    <div class="contact-info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@welbridge.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't Let Paperwork Hold You Back</h2>
+            <p>Proper certification turns your documents into internationally recognized assets. Let us handle the complexity.</p>
+            <a href="#contact" class="btn btn-premium btn-large">Get Your Quote Today</a>
+            <p class="cta-price">Pricing: <span>Upon consultation</span> — varies by document type and service</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/WB_Concept_1_White.svg" alt="WelBridge" style="height: 60px; width: auto;">
+                    </a>
+                    <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="nif.html">Portugal NIF</a></li>
+                        <li><a href="bank-account.html">Bank Account</a></li>
+                        <li><a href="certification.html">Document Certification</a></li>
+                        <li><a href="tax-representative.html">Tax Representative</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Visas</h4>
+                    <ul>
+                        <li><a href="d7-visa.html">D7 Visa</a></li>
+                        <li><a href="d2-visa.html">D2 Visa</a></li>
+                        <li><a href="digital-nomad-visa.html">Digital Nomad</a></li>
+                        <li><a href="citizenship.html">Citizenship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WelBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // SCROLL - Header fica com fundo sólido
+            const header = document.getElementById('header');
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+            const setAria = () => {
+                if (!mobileToggle || !mobileMenu) return;
+                const isOpen = mobileMenu.classList.contains('active');
+                mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+                mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            const closeMobileMenu = () => {
+                if (!mobileMenu || !mobileToggle) return;
+                mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                setAria();
+            };
+
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('active');
+                    mobileToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                    setAria();
+                });
+            }
+
+            // Close button click
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+
+            // Fecha menu mobile ao clicar em qualquer link dentro dele
+            document.querySelectorAll('#mobileMenu a').forEach((a) => {
+                a.addEventListener('click', closeMobileMenu);
+            });
+
+            // Mobile Dropdown Toggle
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const dropdown = button.parentElement;
+                    const isActive = dropdown.classList.toggle('active');
+                    button.setAttribute('aria-expanded', String(isActive));
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            closeMobileMenu();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+
+            // Fix: links index.html#contact / index.html#about
+            document.querySelectorAll('a[href="index.html#contact"], a[href="index.html#about"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const path = window.location.pathname;
+                    if (path.endsWith('index.html') || path === '/' || path.endsWith('/')) {
+                        e.preventDefault();
+                        const id = this.getAttribute('href').split('#')[1];
+                        const target = document.getElementById(id);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ESC fecha menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

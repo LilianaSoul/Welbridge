@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy & Cookie Policy | WelBridge</title>
+    <meta name="description" content="WelBridge Privacy & Cookie Policy. Learn how we collect, use, and protect your personal information when using our Portugal relocation services. GDPR compliant.">
+    
+    <link rel="icon" href="images/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1D3557;
+            --primary-light: #2A4A73;
+            --premium: #DAA520;
+            --premium-dark: #B8860B;
+            --text: #1D3557;
+            --text-light: #5A6C7D;
+            --background: #FAF8F5;
+            --white: #FFFFFF;
+            --border: #E8E4DE;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           HEADER - CORRIGIDO (TRANSPARENTE + SCROLL)
+        ========================= */
+        .header {
+            background: transparent;
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            transition: background 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: var(--primary);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        /* =========================
+           NAV LINK - CORRIGIDO (SUBLINHADO)
+        ========================= */
+        .nav-link {
+            position: relative;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--premium);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover { 
+            color: var(--premium); 
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active { 
+            color: white; 
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--premium) 0%, var(--premium-dark) 100%);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            padding: 8px 12px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .lang-btn:hover { color: white; }
+
+        /* =========================
+           NAVIGATION & DROPDOWN (DESKTOP)
+        ========================= */
+        .nav-main { display: none; }
+        @media (min-width: 1024px) { .nav-main { display: block; } }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > .nav-link { display: flex; align-items: center; gap: 0.375rem; }
+        .nav-dropdown > .nav-link svg { transition: transform 0.3s ease; }
+        .nav-dropdown:hover > .nav-link svg { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            width: 340px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            z-index: 2500;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-grid { display: grid; grid-template-columns: 1fr; gap: 0.125rem; }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover { background: var(--background); }
+
+        .dropdown-icon {
+            width: 40px; height: 40px;
+            background: var(--background);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover .dropdown-icon { background: var(--primary); }
+        .dropdown-icon svg { width: 20px; height: 20px; stroke: var(--primary); transition: all 0.3s ease; }
+        .dropdown-item:hover .dropdown-icon svg { stroke: white; }
+
+        .dropdown-text { display: flex; flex-direction: column; }
+        .dropdown-text strong { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+        .dropdown-text span { font-size: 0.75rem; color: var(--text-light); margin-top: 0.125rem; }
+
+        @media (max-width: 1023px) { .dropdown-menu { display: none; } }
+
+        /* =========================
+           MOBILE TOGGLE
+        ========================= */
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 1024px) { .mobile-toggle { display: none; } }
+
+        .mobile-toggle span {
+            position: relative;
+            width: 20px; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before { top: -6px; }
+        .mobile-toggle span::after { bottom: -6px; }
+        .mobile-toggle.active span { background: transparent; }
+        .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+        .mobile-toggle.active span::after { bottom: 0; transform: rotate(-45deg); }
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 3000;
+            padding: 96px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            width: 100vw;
+        }
+
+        .mobile-menu.active { transform: translateX(0); }
+
+        /* Mobile Menu Close Button */
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-close svg {
+            color: white;
+        }
+
+        .mobile-menu-links { flex: 1; list-style: none; margin: 0; padding: 0; }
+        .mobile-menu-links > li { margin-bottom: 24px; }
+        .mobile-menu-links > li > a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+        }
+
+        .mobile-menu-footer {
+            position: sticky;
+            bottom: 0;
+            padding-top: 16px;
+            padding-bottom: 8px;
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .mobile-menu-footer .btn { width: 100%; justify-content: center; }
+
+        /* =========================
+           MOBILE DROPDOWN
+        ========================= */
+        .mobile-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-toggle svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .mobile-dropdown.active .mobile-dropdown-toggle svg { transform: rotate(180deg); }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding-left: 16px;
+            margin-top: 0;
+            list-style: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-menu { max-height: 700px; margin-top: 16px; }
+        .mobile-dropdown-menu li { margin-bottom: 14px; }
+        .mobile-dropdown-menu a {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        .mobile-dropdown-menu a:hover { color: var(--premium); }
+
+        /* =========================
+           RESPONSIVE HEADER
+        ========================= */
+        @media (max-width: 768px) {
+            .logo img { height: 44px; }
+            .header-right .btn { display: none; }
+            .lang-btn { padding: 6px 10px; font-size: 0.8rem; }
+        }
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+        .page-header {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(218, 165, 32, 0.15);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--premium);
+            margin-top: 20px;
+        }
+
+        /* =========================
+           LEGAL CONTENT
+        ========================= */
+        .legal-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .legal-intro {
+            background: var(--background);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+            border-left: 4px solid var(--premium);
+        }
+
+        .legal-intro p {
+            color: var(--text);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+        }
+
+        .legal-intro p:last-child { margin-bottom: 0; }
+
+        /* Quick Navigation */
+        .quick-nav {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .quick-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--background);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav a:hover {
+            border-color: var(--premium);
+            color: var(--premium);
+        }
+
+        .quick-nav a svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        .legal-section { margin-bottom: 48px; }
+
+        .legal-section h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .legal-section h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 28px 0 16px;
+        }
+
+        .legal-section p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .legal-section ul, .legal-section ol {
+            color: var(--text-light);
+            margin: 16px 0;
+            padding-left: 24px;
+            font-size: 0.95rem;
+        }
+
+        .legal-section li { margin-bottom: 10px; }
+        .legal-section strong { color: var(--text); }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table th {
+            background: var(--background);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .data-table td { color: var(--text-light); }
+        .data-table tr:hover td { background: var(--background); }
+
+        .highlight-box {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p { margin-bottom: 0; }
+
+        .cookie-type {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+            border-left: 4px solid var(--premium);
+        }
+
+        .cookie-type h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .cookie-type p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .right-card {
+            background: var(--background);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .right-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .right-card h4 svg {
+            width: 18px;
+            height: 18px;
+            color: var(--premium);
+            flex-shrink: 0;
+        }
+
+        .right-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+            color: var(--white);
+        }
+
+        .contact-box h3 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 8px;
+        }
+
+        .contact-box a {
+            color: var(--premium);
+            text-decoration: none;
+        }
+
+        .contact-box a:hover { text-decoration: underline; }
+
+        /* Divider */
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, var(--premium) 0%, var(--primary) 100%);
+            border-radius: 2px;
+            margin: 60px 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        .footer {
+            background: var(--primary);
+            padding: 60px 0 30px;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 24px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h4 {
+            color: var(--premium);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--premium); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .rights-grid { grid-template-columns: 1fr; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th,
+            .data-table td { padding: 12px 8px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .quick-nav { flex-direction: column; }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+            </a>
+
+            <nav class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">
+                            Services
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <a href="nif.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF</strong><span>Portuguese Tax Number</span></div>
+                                </a>
+                                <a href="tax-representative.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF Tax Representative</strong><span>Stay compliant with AT</span></div>
+                                </a>
+                                <a href="nif-address-update.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF Address Update</strong><span>Change your fiscal address</span></div>
+                                </a>
+                                <a href="niss.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                                    <div class="dropdown-text"><strong>NISS</strong><span>Social Security Number</span></div>
+                                </a>
+                                <a href="bank-account.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+                                    <div class="dropdown-text"><strong>Bank Account</strong><span>Open 100% remotely</span></div>
+                                </a>
+                                <a href="document-certification.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                    <div class="dropdown-text"><strong>Certification & Authentication</strong><span>Document legalization</span></div>
+                                </a>
+                                <a href="criminal-record.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                                    <div class="dropdown-text"><strong>Criminal Record Certificate</strong><span>Official background check</span></div>
+                                </a>
+                                <a href="citizenship.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                                    <div class="dropdown-text"><strong>Portuguese Citizenship</strong><span>Path to EU passport</span></div>
+                                </a>
+                                <a href="lease-review.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                                    <div class="dropdown-text"><strong>Lease Agreement Review</strong><span>Protect your rental rights</span></div>
+                                </a>
+                                <a href="index.html#contact" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="14" r="3"/></svg></div>
+                                    <div class="dropdown-text"><strong>Real Estate Advisory</strong><span>Find your perfect property</span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="lang-switch">
+                    <a href="privacy.html" class="lang-btn active">EN</a>
+                    <a href="privacy-pt.html" class="lang-btn">PT</a>
+                </div>
+                <a href="index.html#contact" class="btn btn-premium">Contact Us</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+                    Services
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="nif.html">NIF</a></li>
+                    <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+                    <li><a href="nif-address-update.html">NIF Address Update</a></li>
+                    <li><a href="niss.html">NISS</a></li>
+                    <li><a href="bank-account.html">Bank Account</a></li>
+                    <li><a href="document-certification.html">Certification & Authentication</a></li>
+                    <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+                    <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+                    <li><a href="lease-review.html">Lease Agreement Review</a></li>
+                    <li><a href="index.html#contact">Real Estate Advisory</a></li>
+                </ul>
+            </li>
+            <li><a href="visa-all.html">Visas</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="index.html#contact" class="btn btn-premium">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Privacy & Cookie Policy</h1>
+            <p>How we collect, use, and protect your personal information</p>
+            <span class="last-updated">Last Updated: December 2025</span>
+        </div>
+    </section>
+
+    <!-- Legal Content -->
+    <section class="legal-content">
+        <div class="container">
+
+            <!-- Introduction -->
+            <div class="legal-intro">
+                <p><strong>Your privacy matters to us.</strong> At WelBridge, we are committed to protecting your personal data and being transparent about how we handle your information. This policy explains what data we collect, why we collect it, how we use it, and the rights you have over your information.</p>
+                <p>WelBridge, Unipessoal Lda ("WelBridge", "we", "us", or "our") acts as the data controller for personal information collected through our website and services.</p>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <a href="#privacy-policy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Privacy Policy
+                </a>
+                <a href="#cookie-policy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg>
+                    Cookie Policy
+                </a>
+                <a href="#your-rights">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                    Your Rights
+                </a>
+            </div>
+
+            <!-- PRIVACY POLICY SECTION -->
+            <div class="legal-section" id="privacy-policy">
+                <h2>Privacy Policy</h2>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect personal data that you provide directly to us when using our services. The type of information depends on how you interact with us:</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Data Collected</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Identity Data</strong></td>
+                            <td>Full name, date of birth, nationality, passport details</td>
+                            <td>Service delivery, document preparation, legal compliance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contact Data</strong></td>
+                            <td>Email address, phone number, residential address</td>
+                            <td>Communication, service updates, document delivery</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Financial Data</strong></td>
+                            <td>Payment card details, billing address</td>
+                            <td>Payment processing (handled by secure third-party processors)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Service Data</strong></td>
+                            <td>Documents submitted, application details, service history</td>
+                            <td>Fulfilling your service requests</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Data</strong></td>
+                            <td>IP address, browser type, device information</td>
+                            <td>Website functionality, security, analytics</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>We process your personal data only when we have a valid legal basis to do so. Our primary purposes include:</p>
+                <ul>
+                    <li><strong>Service Delivery:</strong> Processing your applications for NIF, NISS, bank accounts, visas, and other services you request</li>
+                    <li><strong>Communication:</strong> Sending updates about your applications, responding to enquiries, and providing customer support</li>
+                    <li><strong>Legal Compliance:</strong> Meeting our obligations under Portuguese and EU law, including anti-money laundering regulations</li>
+                    <li><strong>Service Improvement:</strong> Analysing how our services are used to enhance user experience</li>
+                    <li><strong>Marketing:</strong> With your consent, sending information about services that may interest you (you can opt out at any time)</li>
+                </ul>
+
+                <h3>3. Sharing Your Information</h3>
+                <p>We share your personal data only when necessary to provide our services or when legally required:</p>
+                
+                <div class="highlight-box">
+                    <h4>Service Partners</h4>
+                    <p>Licensed Portuguese lawyers, accountants, and other professionals who assist in delivering our services. These partners act as independent data controllers and are bound by their own professional obligations of confidentiality.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Portuguese Authorities</h4>
+                    <p>Government bodies such as the Tax Authority (Autoridade Tributária), Social Security (Segurança Social), AIMA, and banking institutions as required to process your applications.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Service Providers</h4>
+                    <p>Companies that help us operate our business, including payment processors, email providers, and website hosting services. These providers only process data on our instructions and are contractually bound to protect your information.</p>
+                </div>
+
+                <p>We never sell your personal data to third parties for marketing purposes.</p>
+
+                <h3>4. Data Security</h3>
+                <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. These measures include:</p>
+                <ul>
+                    <li>Encrypted data transmission (SSL/TLS)</li>
+                    <li>Secure document storage systems</li>
+                    <li>Access controls limiting who can view your information</li>
+                    <li>Regular security assessments</li>
+                    <li>Staff training on data protection</li>
+                </ul>
+                <p>While we take every reasonable precaution, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but are committed to protecting your data to the best of our abilities.</p>
+
+                <h3>5. Data Retention</h3>
+                <p>We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected, including legal, accounting, or reporting requirements.</p>
+                <ul>
+                    <li><strong>Active client records:</strong> Duration of our business relationship plus 7 years</li>
+                    <li><strong>Financial records:</strong> 10 years (Portuguese legal requirement)</li>
+                    <li><strong>Marketing preferences:</strong> Until you withdraw consent</li>
+                    <li><strong>Website analytics:</strong> 26 months</li>
+                </ul>
+                <p>When data is no longer needed, we securely delete or anonymise it.</p>
+
+                <h3>6. International Transfers</h3>
+                <p>Your data is primarily processed and stored within the European Economic Area (EEA). If we need to transfer data outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses approved by the European Commission.</p>
+            </div>
+
+            <!-- Divider -->
+            <div class="section-divider"></div>
+
+            <!-- COOKIE POLICY SECTION -->
+            <div class="legal-section" id="cookie-policy">
+                <h2>Cookie Policy</h2>
+                
+                <h3>What Are Cookies?</h3>
+                <p>Cookies are small text files placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences, understanding how you use our site, and enabling certain functionalities.</p>
+
+                <h3>Types of Cookies We Use</h3>
+                
+                <div class="cookie-type">
+                    <h4>Essential Cookies</h4>
+                    <p>Required for the website to function properly. These enable core features like page navigation, secure areas access, and form submissions. Without these cookies, certain services cannot be provided. These cookies do not collect personal information for marketing purposes.</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h4>Functional Cookies</h4>
+                    <p>Remember your preferences and choices (such as language settings) to provide a more personalised experience. They may also be used to provide services you have requested.</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h4>Analytics Cookies</h4>
+                    <p>Help us understand how visitors interact with our website by collecting anonymous information about pages visited, time spent on site, and any errors encountered. This data helps us improve our website and services.</p>
+                </div>
+
+                <div class="cookie-type">
+                    <h4>Marketing Cookies</h4>
+                    <p>Used to track visitors across websites to display relevant advertisements. We only use these with your explicit consent. You can opt out at any time through your browser settings or our cookie preferences.</p>
+                </div>
+
+                <h3>Cookie Duration</h3>
+                <ul>
+                    <li><strong>Session Cookies:</strong> Temporary cookies that are deleted when you close your browser</li>
+                    <li><strong>Persistent Cookies:</strong> Remain on your device for a set period or until you manually delete them</li>
+                </ul>
+
+                <h3>Managing Your Cookie Preferences</h3>
+                <p>You have control over cookies. You can:</p>
+                <ul>
+                    <li><strong>Accept or reject cookies</strong> when first visiting our site via our cookie consent banner</li>
+                    <li><strong>Change browser settings</strong> to block or delete cookies (note: this may affect website functionality)</li>
+                    <li><strong>Opt out of analytics</strong> by using browser extensions or privacy settings</li>
+                </ul>
+                <p>To manage cookies in your browser, consult your browser's help documentation. Common browsers include:</p>
+                <ul>
+                    <li>Google Chrome: Settings → Privacy and Security → Cookies</li>
+                    <li>Mozilla Firefox: Settings → Privacy & Security → Cookies</li>
+                    <li>Safari: Preferences → Privacy → Cookies</li>
+                    <li>Microsoft Edge: Settings → Cookies and Site Permissions</li>
+                </ul>
+
+                <h3>Third-Party Cookies</h3>
+                <p>Some cookies are placed by third-party services that appear on our pages, such as analytics providers or payment processors. We do not control these cookies. Please refer to the respective third parties' privacy policies for more information about how they use data.</p>
+            </div>
+
+            <!-- Divider -->
+            <div class="section-divider"></div>
+
+            <!-- YOUR RIGHTS SECTION -->
+            <div class="legal-section" id="your-rights">
+                <h2>Your Rights</h2>
+                <p>Under the General Data Protection Regulation (GDPR) and Portuguese data protection law, you have the following rights regarding your personal data:</p>
+
+                <div class="rights-grid">
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            Right of Access
+                        </h4>
+                        <p>Request a copy of the personal data we hold about you and information about how we process it.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            Right to Rectification
+                        </h4>
+                        <p>Request correction of any inaccurate or incomplete personal data we hold about you.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                            Right to Erasure
+                        </h4>
+                        <p>Request deletion of your personal data when there is no compelling reason for continued processing.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Right to Restriction
+                        </h4>
+                        <p>Request that we limit the processing of your data in certain circumstances.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Right to Data Portability
+                        </h4>
+                        <p>Receive your data in a structured, commonly used format and transfer it to another provider.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                            Right to Object
+                        </h4>
+                        <p>Object to processing based on legitimate interests or for direct marketing purposes.</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                            Right to Withdraw Consent
+                        </h4>
+                        <p>Withdraw consent at any time where processing is based on your consent (e.g., marketing).</p>
+                    </div>
+                    <div class="right-card">
+                        <h4>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Right to Lodge a Complaint
+                        </h4>
+                        <p>File a complaint with the Portuguese Data Protection Authority (CNPD) if you believe your rights have been violated.</p>
+                    </div>
+                </div>
+
+                <h3>Exercising Your Rights</h3>
+                <p>To exercise any of these rights, please contact us at <a href="mailto:info@welbridge.com" style="color: var(--premium);">info@welbridge.com</a>. We will respond to your request within 30 days. For identity verification purposes, we may ask you to provide a copy of your identification document.</p>
+                <p>Please note that certain rights may be limited where we have an overriding legitimate interest or legal obligation to retain data.</p>
+            </div>
+
+            <!-- Policy Updates -->
+            <div class="legal-section">
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy & Cookie Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make significant changes, we will notify you by:</p>
+                <ul>
+                    <li>Posting a prominent notice on our website</li>
+                    <li>Updating the "Last Updated" date at the top of this page</li>
+                    <li>Sending an email notification to active clients (for material changes)</li>
+                </ul>
+                <p>We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="contact-box">
+                <h3>Questions About Your Privacy?</h3>
+                <p>If you have any questions, concerns, or requests regarding this Privacy & Cookie Policy or how we handle your personal data, please contact us:</p>
+                <p style="margin-top: 16px;"><strong>Email:</strong> <a href="mailto:info@welbridge.com">info@welbridge.com</a></p>
+                <p><strong>Website:</strong> <a href="https://welbridge.com">www.welbridge.com</a></p>
+                <p><strong>Address:</strong> Lisbon, Portugal</p>
+                <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.8;">For data protection enquiries, we aim to respond within 5 business days.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="images/WB_Concept_1_White.svg" alt="WelBridge" style="height: 60px; width: auto;">
+                </a>
+                <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="nif.html">Portugal NIF</a></li>
+                    <li><a href="niss.html">NISS Registration</a></li>
+                    <li><a href="bank-account.html">Bank Account</a></li>
+                    <li><a href="tax-representative.html">Tax Representative</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Visas</h4>
+                <ul>
+                    <li><a href="d7-visa.html">D7 Visa</a></li>
+                    <li><a href="d2-visa.html">D2 Visa</a></li>
+                    <li><a href="digital-nomad-visa.html">Digital Nomad</a></li>
+                    <li><a href="citizenship.html">Citizenship</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 WelBridge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // SCROLL - Header fica com fundo sólido
+            const header = document.getElementById('header');
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+            const setAria = () => {
+                if (!mobileToggle || !mobileMenu) return;
+                const isOpen = mobileMenu.classList.contains('active');
+                mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+                mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            const closeMobileMenu = () => {
+                if (!mobileMenu || !mobileToggle) return;
+                mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                setAria();
+            };
+
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('active');
+                    mobileToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                    setAria();
+                });
+            }
+
+            // Close button click
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+
+            // Fecha menu mobile ao clicar em qualquer link dentro dele
+            document.querySelectorAll('#mobileMenu a').forEach((a) => {
+                a.addEventListener('click', closeMobileMenu);
+            });
+
+            // Mobile Dropdown Toggle
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const dropdown = button.parentElement;
+                    const isActive = dropdown.classList.toggle('active');
+                    button.setAttribute('aria-expanded', String(isActive));
+                });
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            closeMobileMenu();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+
+            // Fix: links index.html#contact / index.html#about
+            document.querySelectorAll('a[href="index.html#contact"], a[href="index.html#about"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const path = window.location.pathname;
+                    if (path.endsWith('index.html') || path === '/' || path.endsWith('/')) {
+                        e.preventDefault();
+                        const id = this.getAttribute('href').split('#')[1];
+                        const target = document.getElementById(id);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ESC fecha menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

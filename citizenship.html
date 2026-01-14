@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Portuguese Citizenship | WelBridge</title>
+  <meta name="description" content="Complete guide to Portuguese citizenship. Understand pathways through naturalization, marriage, descent, and investment." />
+
+  <link rel="icon" href="images/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1D3557;
+      --primary-light: #2A4A73;
+      --primary-dark: #152538;
+      --premium: #DAA520;
+      --premium-dark: #B8860B;
+      --text: #1D3557;
+      --text-light: #5A6C7D;
+      --text-dark: #0F1C2E;
+      --background: #FAF8F5;
+      --white: #FFFFFF;
+      --border: #E8E4DE;
+      --success: #2E7D32;
+      --warning: #D97706;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; overflow-x: hidden; }
+    img, svg, video, canvas { max-width: 100%; height: auto; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+    /* ==========================================
+       HEADER - CORRIGIDO (TRANSPARENTE + SCROLL)
+       ========================================== */
+    .header {
+      background: transparent;
+      padding: 16px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      transition: background 0.3s ease;
+    }
+
+    .header.scrolled {
+      background: var(--primary);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    /* Tamanho consistente do logo (sem inline style) */
+    .logo img {
+      height: 60px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+    }
+
+    /* ==========================================
+       NAV LINK - CORRIGIDO (SUBLINHADO)
+       ========================================== */
+    .nav-link {
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--premium);
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover { 
+      color: var(--premium); 
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active { 
+      color: white; 
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      white-space: nowrap;
+    }
+
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .btn-premium {
+      background: linear-gradient(135deg, var(--premium) 0%, var(--premium-dark) 100%);
+      color: var(--primary);
+      box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    }
+    .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4); }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    .btn-full { width: 100%; justify-content: center; }
+    .btn-large { padding: 16px 32px; font-size: 1.1rem; }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Language Switcher */
+    .lang-switch {
+      display: flex;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lang-btn.active { background: rgba(255,255,255,0.2); color: white; }
+    .lang-btn:hover { color: white; }
+
+    /* ==========================================
+       NAVIGATION & DROPDOWN (DESKTOP)
+       ========================================== */
+    .nav-main { display: none; }
+    @media (min-width: 1024px) { .nav-main { display: block; } }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > .nav-link { display: flex; align-items: center; gap: 0.375rem; }
+    .nav-dropdown > .nav-link svg { transition: transform 0.3s ease; }
+    .nav-dropdown:hover > .nav-link svg { transform: rotate(180deg); }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 340px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      z-index: 2500;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid white;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-grid { display: grid; grid-template-columns: 1fr; gap: 0.125rem; }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.75rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .dropdown-item:hover { background: var(--background); }
+
+    .dropdown-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--background);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-item:hover .dropdown-icon { background: var(--primary); }
+    .dropdown-icon svg { width: 20px; height: 20px; stroke: var(--primary); transition: all 0.3s ease; }
+    .dropdown-item:hover .dropdown-icon svg { stroke: white; }
+
+    .dropdown-text { display: flex; flex-direction: column; }
+    .dropdown-text strong { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+    .dropdown-text span { font-size: 0.75rem; color: var(--text-light); margin-top: 0.125rem; }
+
+    @media (max-width: 1023px) { .dropdown-menu { display: none; } }
+
+    /* ==========================================
+       MOBILE TOGGLE
+       ========================================== */
+    .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 1024px) { .mobile-toggle { display: none; } }
+
+    .mobile-toggle span {
+      position: relative;
+      width: 20px;
+      height: 2px;
+      background: white;
+      transition: 0.3s ease;
+    }
+
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: white;
+      transition: 0.3s ease;
+    }
+
+    .mobile-toggle span::before { top: -6px; }
+    .mobile-toggle span::after { bottom: -6px; }
+
+    .mobile-toggle.active span { background: transparent; }
+    .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+    .mobile-toggle.active span::after { bottom: 0; transform: rotate(-45deg); }
+
+    /* ==========================================
+       MOBILE MENU
+       ========================================== */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 3000;
+      padding: 96px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      width: 100vw;
+    }
+
+    .mobile-menu.active { transform: translateX(0); }
+
+    /* Mobile Menu Close Button */
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .mobile-menu-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-menu-close svg {
+      color: white;
+    }
+
+    .mobile-menu-links { flex: 1; list-style: none; margin: 0; padding: 0; }
+    .mobile-menu-links > li { margin-bottom: 24px; }
+
+    .mobile-menu-links > li > a {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+    }
+
+    .mobile-menu-footer {
+      position: sticky;
+      bottom: 0;
+      padding-top: 16px;
+      padding-bottom: 8px;
+      background: var(--primary);
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-menu-footer .btn { width: 100%; justify-content: center; }
+
+    /* ==========================================
+       MOBILE DROPDOWN
+       ========================================== */
+    .mobile-dropdown-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: white;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .mobile-dropdown-toggle svg { transition: transform 0.3s ease; flex-shrink: 0; }
+    .mobile-dropdown.active .mobile-dropdown-toggle svg { transform: rotate(180deg); }
+
+    .mobile-dropdown-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding-left: 16px;
+      margin-top: 0;
+      list-style: none;
+    }
+
+    .mobile-dropdown.active .mobile-dropdown-menu { max-height: 700px; margin-top: 16px; }
+    .mobile-dropdown-menu li { margin-bottom: 14px; }
+
+    .mobile-dropdown-menu a {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+    .mobile-dropdown-menu a:hover { color: var(--premium); }
+
+    /* ==========================================
+       HERO
+       ========================================== */
+    .hero {
+      padding: 140px 0 100px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(218,165,32,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-content { color: var(--white); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(218, 165, 32, 0.2);
+      border: 1px solid rgba(218, 165, 32, 0.3);
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--premium);
+      margin-bottom: 28px;
+    }
+
+    .hero-badge svg { width: 18px; height: 18px; }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      color: var(--white);
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+
+    .hero h1 span { color: var(--premium); }
+
+    .hero-description {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .hero-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .hero-benefit {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .hero-benefit svg {
+      width: 22px;
+      height: 22px;
+      color: var(--premium);
+      flex-shrink: 0;
+    }
+
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* Passport & ID Card Visual */
+    .hero-visual { position: relative; }
+
+    .passport-card {
+      background: linear-gradient(145deg, #8B0000 0%, #5C0000 100%);
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+      position: relative;
+      transform: rotate(-3deg);
+      max-width: 350px;
+      margin-left: auto;
+    }
+
+    .passport-header { text-align: center; margin-bottom: 30px; }
+    .passport-eu {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .passport-country {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--premium);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .passport-emblem {
+      width: 80px;
+      height: 80px;
+      background: var(--premium);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .passport-emblem svg { width: 45px; height: 45px; color: #8B0000; }
+
+    .passport-type {
+      font-size: 1.1rem;
+      color: var(--premium);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .passport-chip {
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      width: 45px;
+      height: 35px;
+      background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+      border-radius: 6px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      padding: 6px;
+    }
+    .passport-chip span { background: rgba(139, 0, 0, 0.3); border-radius: 1px; }
+
+    /* Citizen Card */
+    .citizen-card {
+      position: absolute;
+      bottom: -30px;
+      left: -40px;
+      background: linear-gradient(135deg, var(--white) 0%, #f5f5f5 100%);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      width: 280px;
+      transform: rotate(5deg);
+    }
+
+    .citizen-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .citizen-card-flag {
+      width: 40px;
+      height: 28px;
+      background: linear-gradient(90deg, #006600 0%, #006600 40%, #FF0000 40%, #FF0000 100%);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .citizen-card-flag::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: var(--premium);
+      border-radius: 50%;
+    }
+
+    .citizen-card-title {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .citizen-card-title strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--primary);
+      letter-spacing: 0;
+    }
+
+    .citizen-card-body { display: flex; gap: 16px; }
+    .citizen-card-photo {
+      width: 60px;
+      height: 75px;
+      background: var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .citizen-card-photo svg { width: 30px; height: 30px; color: var(--text-light); }
+
+    .citizen-card-info { flex: 1; }
+    .citizen-card-line {
+      height: 8px;
+      background: var(--border);
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .citizen-card-line:nth-child(1) { width: 100%; }
+    .citizen-card-line:nth-child(2) { width: 70%; }
+    .citizen-card-line:nth-child(3) { width: 85%; }
+
+    /* ==========================================
+       SHARED SECTION STYLES
+       ========================================== */
+    .section-label {
+      display: inline-block;
+      color: var(--premium);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header .section-subtitle { margin: 0 auto; }
+
+    /* Benefits */
+    .benefits-section { padding: 100px 0; background: var(--white); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .benefit-card {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover { background: var(--background); transform: translateY(-5px); }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .benefit-icon svg { width: 32px; height: 32px; color: var(--premium); }
+
+    .benefit-card h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 10px; }
+    .benefit-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; }
+
+    /* Pathways */
+    .pathways-section { padding: 100px 0; background: var(--background); }
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .pathway-card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 40px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pathway-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--premium), var(--primary));
+    }
+
+    .pathway-card:hover {
+      border-color: var(--premium);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(29, 53, 87, 0.1);
+    }
+
+    .pathway-header { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+
+    .pathway-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--background);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .pathway-icon svg { width: 28px; height: 28px; color: var(--primary); }
+
+    .pathway-title h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 4px; }
+    .pathway-title span { font-size: 0.85rem; color: var(--premium); font-weight: 600; }
+
+    .pathway-card > p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .pathway-requirements { list-style: none; }
+    .pathway-requirements li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .pathway-requirements li:first-child { border-top: none; }
+    .pathway-requirements svg {
+      width: 18px;
+      height: 18px;
+      color: var(--success);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Requirements */
+    .requirements-section { padding: 100px 0; background: var(--white); }
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .requirements-content h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; }
+    .requirements-content > p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .requirements-list { list-style: none; }
+
+    .requirements-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--background);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--premium);
+    }
+    .requirements-list li:last-child { margin-bottom: 0; }
+
+    .req-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .req-icon svg { width: 22px; height: 22px; color: var(--primary); }
+
+    .req-text strong { display: block; color: var(--primary); margin-bottom: 4px; }
+    .req-text span { color: var(--text-light); font-size: 0.9rem; }
+
+    .requirements-visual {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .requirements-visual h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--white); }
+    .requirements-visual p { font-size: 1.05rem; opacity: 0.9; margin-bottom: 32px; line-height: 1.7; }
+
+    .timeline-items { display: flex; flex-direction: column; gap: 16px; text-align: left; }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+    }
+
+    .timeline-number {
+      width: 40px;
+      height: 40px;
+      background: var(--premium);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .timeline-item span { font-size: 0.95rem; }
+
+    /* Notice */
+    .notice-section { padding: 80px 0; background: var(--background); }
+    .notice-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 24px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .notice-icon {
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .notice-icon svg { width: 50px; height: 50px; color: var(--premium); }
+
+    .notice-content { flex: 1; color: var(--white); }
+    .notice-content h3 { font-size: 1.5rem; margin-bottom: 12px; color: var(--white); }
+    .notice-content p { font-size: 1rem; opacity: 0.9; line-height: 1.7; }
+
+    /* FAQ */
+    .faq-section { padding: 100px 0; background: var(--white); }
+    .faq-list { max-width: 800px; margin: 60px auto 0; width: 100%; }
+
+    .faq-item {
+      background: var(--background);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      font-family: inherit;
+      gap: 16px;
+    }
+
+    .faq-question svg {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      color: var(--premium);
+    }
+
+    .faq-item.active .faq-question svg { transform: rotate(45deg); }
+
+    .faq-answer {
+      padding: 0 24px 24px;
+      color: var(--text-light);
+      display: none;
+      line-height: 1.7;
+    }
+    .faq-item.active .faq-answer { display: block; }
+
+    /* Contact */
+    .contact-section { padding: 100px 0; background: var(--background); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .contact-content .section-title { margin-bottom: 16px; }
+
+    .contact-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .contact-info { margin-top: 32px; }
+    .contact-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .contact-info-item svg { width: 20px; height: 20px; color: var(--premium); }
+    .contact-info-item span { color: var(--text); font-size: 1rem; }
+
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(29, 53, 87, 0.08);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .contact-form-card h4 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+      background: var(--white);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--premium);
+    }
+
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231D3557' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 18px;
+      padding-right: 45px;
+    }
+
+    .form-group textarea { resize: vertical; }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-consent input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      cursor: pointer;
+      accent-color: var(--premium);
+      flex-shrink: 0;
+    }
+
+    .form-consent label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .form-consent a {
+      color: var(--premium);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .form-consent a:hover { text-decoration: underline; }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      text-align: center;
+    }
+
+    .cta-section h2 { font-size: 2.5rem; color: var(--white); margin-bottom: 20px; }
+    .cta-section > .container > p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-price { margin-top: 24px; font-size: 1rem; color: rgba(255,255,255,0.7); }
+    .cta-price span { color: var(--premium); font-weight: 600; }
+
+    /* Footer */
+    .footer { background: var(--primary); padding: 60px 0 30px; color: var(--white); overflow: hidden; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .footer-brand p { color: rgba(255,255,255,0.7); margin-top: 16px; font-size: 0.9rem; }
+
+    .footer-column h4 {
+      color: var(--premium);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .footer .logo img { height: 60px; }
+
+    .footer-column ul { list-style: none; }
+    .footer-column li { margin-bottom: 12px; }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .footer-column a:hover { color: var(--premium); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero-visual { max-width: 400px; margin: 0 auto; }
+
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .pathways-grid { grid-template-columns: 1fr; }
+      .requirements-grid { grid-template-columns: 1fr; }
+
+      .notice-card { flex-direction: column; text-align: center; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .logo img { height: 44px; }
+      .header-right .btn { display: none; }
+      .lang-btn { padding: 6px 10px; font-size: 0.8rem; }
+
+      .hero { padding: 100px 0 60px; }
+      .hero h1 { font-size: 2rem; }
+
+      .benefits-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 { font-size: 1.75rem; }
+      .section-title { font-size: 1.8rem; }
+
+      .hero-cta { flex-direction: column; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+
+      .passport-card { transform: none; }
+
+      .citizen-card {
+        position: relative;
+        left: 0;
+        bottom: -20px;
+        transform: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/WB_Concept_1_White.svg" alt="WelBridge" />
+      </a>
+
+      <nav class="nav-main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+
+          <li class="nav-dropdown">
+            <a href="#" class="nav-link active" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+
+            <div class="dropdown-menu" role="menu" aria-label="Services">
+              <div class="dropdown-grid">
+                <a href="nif.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                      <path d="M3 10h18"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>NIF</strong>
+                    <span>Portuguese Tax Number</span>
+                  </div>
+                </a>
+
+                <a href="tax-representative.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>NIF Tax Representative</strong>
+                    <span>Stay compliant with AT</span>
+                  </div>
+                </a>
+
+                <a href="nif-address-update.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>NIF Address Update</strong>
+                    <span>Change your fiscal address</span>
+                  </div>
+                </a>
+
+                <a href="niss.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>NISS</strong>
+                    <span>Social Security Number</span>
+                  </div>
+                </a>
+
+                <a href="bank-account.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="1" y="4" width="22" height="16" rx="2"></rect>
+                      <path d="M1 10h22"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Bank Account</strong>
+                    <span>Open 100% remotely</span>
+                  </div>
+                </a>
+
+                <a href="document-certification.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Certification & Authentication</strong>
+                    <span>Document legalization</span>
+                  </div>
+                </a>
+
+                <a href="criminal-record.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Criminal Record Certificate</strong>
+                    <span>Official background check</span>
+                  </div>
+                </a>
+
+                <a href="citizenship.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M2 12h20"></path>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Portuguese Citizenship</strong>
+                    <span>Path to EU passport</span>
+                  </div>
+                </a>
+
+                <a href="lease-review.html" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Lease Agreement Review</strong>
+                    <span>Protect your rental rights</span>
+                  </div>
+                </a>
+
+                <a href="index.html#contact" class="dropdown-item">
+                  <div class="dropdown-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                      <circle cx="12" cy="14" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="dropdown-text">
+                    <strong>Real Estate Advisory</strong>
+                    <span>Find your perfect property</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="index.html#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <div class="lang-switch">
+          <a href="citizenship.html" class="lang-btn active">EN</a>
+          <a href="citizenship-pt.html" class="lang-btn">PT</a>
+        </div>
+        <a href="#contact" class="btn btn-premium">Free Consultation</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html">Home</a></li>
+
+      <li class="mobile-dropdown">
+        <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+          Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <ul class="mobile-dropdown-menu">
+          <li><a href="nif.html">NIF</a></li>
+          <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+          <li><a href="nif-address-update.html">NIF Address Update</a></li>
+          <li><a href="niss.html">NISS</a></li>
+          <li><a href="bank-account.html">Bank Account</a></li>
+          <li><a href="document-certification.html">Certification & Authentication</a></li>
+          <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+          <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+          <li><a href="lease-review.html">Lease Agreement Review</a></li>
+          <li><a href="index.html#contact">Real Estate Advisory</a></li>
+        </ul>
+      </li>
+
+      <li><a href="visa-all.html">Visas</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="mobile-menu-footer">
+      <a href="#contact" class="btn btn-premium">Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            Gateway to Europe
+          </div>
+
+          <h1>Become a <span>Portuguese Citizen</span></h1>
+          <p class="hero-description">
+            Portuguese citizenship opens doors to all 29 EU countries. Live, work, and travel freely across Europe with one of the world's most powerful passports.
+          </p>
+
+          <div class="hero-benefits">
+            <div class="hero-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Visa-free access to 190+ countries
+            </div>
+            <div class="hero-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Full EU citizenship rights for you and your family
+            </div>
+            <div class="hero-benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Portugal allows dual citizenship
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-premium btn-large">Free Eligibility Check</a>
+            <a href="#pathways" class="btn btn-outline-white btn-large">Explore Pathways</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="passport-card">
+            <div class="passport-header">
+              <div class="passport-eu">European Union</div>
+              <div class="passport-country">Portugal</div>
+              <div class="passport-emblem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="passport-type">Passaporte</div>
+            </div>
+            <div class="passport-chip">
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="citizen-card">
+            <div class="citizen-card-header">
+              <div class="citizen-card-flag"></div>
+              <div class="citizen-card-title">
+                República Portuguesa
+                <strong>Cartão de Cidadão</strong>
+              </div>
+            </div>
+            <div class="citizen-card-body">
+              <div class="citizen-card-photo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="citizen-card-info">
+                <div class="citizen-card-line"></div>
+                <div class="citizen-card-line"></div>
+                <div class="citizen-card-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Portugal?</span>
+        <h2 class="section-title">The Benefits of Portuguese Citizenship</h2>
+        <p class="section-subtitle">
+          More than just a passport — it's a new chapter of freedom and opportunity for you and future generations.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3>Global Mobility</h3>
+          <p>Travel visa-free or with visa-on-arrival to over 190 countries, including the USA, Canada, Japan, and all of Europe.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>Family Legacy</h3>
+          <p>Your children and grandchildren can inherit Portuguese citizenship, securing European rights for future generations.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>Work Anywhere in EU</h3>
+          <p>Live and work in any of the 29 European Union member states without needing visas or work permits.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Dual Citizenship</h3>
+          <p>Portugal allows dual nationality — keep your current citizenship while enjoying all the benefits of being Portuguese.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATHWAYS -->
+  <section class="pathways-section" id="pathways">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Your Options</span>
+        <h2 class="section-title">Pathways to Portuguese Citizenship</h2>
+        <p class="section-subtitle">There are several routes to becoming a Portuguese citizen. The right path depends on your personal circumstances.</p>
+      </div>
+
+      <div class="pathways-grid">
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="pathway-title">
+              <h3>Naturalization</h3>
+              <span>By Legal Residency</span>
+            </div>
+          </div>
+          <p>The most common route for expatriates. After living legally in Portugal for a minimum period, you can apply to become a citizen through naturalization.</p>
+          <ul class="pathway-requirements">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Minimum 5 years of legal residency (currently under review — may increase to 10 years)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Portuguese language proficiency at A2 level (CIPLE exam)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Clean criminal record — no convictions with sentences of 3+ years
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Proof of ties to the Portuguese community
+            </li>
+          </ul>
+        </div>
+
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <div class="pathway-title">
+              <h3>Marriage or Partnership</h3>
+              <span>To a Portuguese Citizen</span>
+            </div>
+          </div>
+          <p>Spouses and registered partners of Portuguese citizens can apply for citizenship without meeting residency requirements — one of the most accessible pathways in Europe.</p>
+          <ul class="pathway-requirements">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Married or in de facto union for at least 3 years
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Marriage must be registered with Portuguese Civil Registry
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              No residency requirement in Portugal
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              A2 language proficiency (waived if married 5+ years)
+            </li>
+          </ul>
+        </div>
+
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="pathway-title">
+              <h3>Descent</h3>
+              <span>Portuguese Ancestry</span>
+            </div>
+          </div>
+          <p>If you have Portuguese parents or grandparents, you may already be entitled to citizenship. This pathway recognizes the principle of "jus sanguinis" — right of blood.</p>
+          <ul class="pathway-requirements">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Child of a Portuguese national — automatic eligibility
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Grandchild of Portuguese national — with proof of connection
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Official birth, marriage, and death certificates required
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Documents must be apostilled and translated
+            </li>
+          </ul>
+        </div>
+
+        <div class="pathway-card">
+          <div class="pathway-header">
+            <div class="pathway-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <div class="pathway-title">
+              <h3>Golden Visa</h3>
+              <span>Investment Route</span>
+            </div>
+          </div>
+          <p>High-net-worth individuals can obtain residency through qualifying investments, then apply for citizenship after the required residency period.</p>
+          <ul class="pathway-requirements">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Qualifying investment (funds, capital transfer, job creation)
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Maintain investment for 5 years minimum
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Only 7 days per year in Portugal required
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Family members can be included
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUIREMENTS -->
+  <section class="requirements-section">
+    <div class="container">
+      <div class="requirements-grid">
+        <div class="requirements-content">
+          <span class="section-label">General Requirements</span>
+          <h2>What You'll Need for Most Applications</h2>
+          <p>While specific requirements vary by pathway, most citizenship applications share common documentation and eligibility criteria.</p>
+
+          <ul class="requirements-list">
+            <li>
+              <div class="req-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <div class="req-text">
+                <strong>Valid Identification</strong>
+                <span>Passport, birth certificate, and other civil documents — apostilled and translated if from abroad</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="req-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="req-text">
+                <strong>Criminal Record Certificates</strong>
+                <span>From Portugal and from any country where you've lived for 6+ months in the past 5 years</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="req-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="req-text">
+                <strong>Portuguese Language Certificate</strong>
+                <span>A2 level (CIPLE) — exemptions apply for CPLP nationals and long-term spouses</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="req-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </div>
+              <div class="req-text">
+                <strong>Application Fee</strong>
+                <span>€250 government fee for nationality applications</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="requirements-visual">
+          <h3>The Process Overview</h3>
+          <p>From initial assessment to receiving your passport, here's what to expect.</p>
+          <div class="timeline-items">
+            <div class="timeline-item">
+              <div class="timeline-number">1</div>
+              <span>Eligibility assessment & pathway selection</span>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">2</div>
+              <span>Document collection & preparation</span>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">3</div>
+              <span>Application submission to IRN</span>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">4</div>
+              <span>Processing & review (12-24 months)</span>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-number">5</div>
+              <span>Citizenship approved — passport & ID issued</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICE -->
+  <section class="notice-section">
+    <div class="container">
+      <div class="notice-card">
+        <div class="notice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+        </div>
+        <div class="notice-content">
+          <h3>Important: Law Changes Under Review</h3>
+          <p>
+            The Portuguese Parliament has approved amendments that would increase residency requirements from 5 to 10 years (7 years for CPLP/EU citizens).
+            These changes are pending Presidential review and are not yet in effect. If you're considering citizenship, now may be the time to act under current rules.
+            Contact us for the latest updates on your eligibility.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question" type="button">
+            How long does the citizenship process take?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Processing times currently range from 12 to 24 months after submitting your application. This can vary depending on your pathway, the completeness of your documentation, and current processing backlogs at the Central Registry (IRN).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Can I keep my current citizenship?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Yes, Portugal allows dual citizenship. You should also verify that your home country permits dual citizenship, as rules vary by nation.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Do I need to live in Portugal to get citizenship?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            It depends on your pathway. Naturalization requires residency. Marriage/descent may not. Golden Visa typically requires limited days in Portugal during the residency period.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            What level of Portuguese do I need?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Most pathways require A2 level proficiency (CIPLE exam or certified course). Some exemptions apply (e.g., Portuguese-speaking countries and certain spouse situations).
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Can my children become Portuguese citizens?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            Often yes, depending on age and pathway. Future children are typically Portuguese by descent once you become Portuguese.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            What happens to my citizenship if I divorce?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            If citizenship is already granted, divorce does not remove it. If divorce happens before approval, it may affect eligibility under the marriage pathway.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-content">
+          <span class="section-label">Get Started</span>
+          <h2 class="section-title">Free Eligibility Consultation</h2>
+          <p>Not sure which pathway is right for you? Our team will review your situation and provide personalized guidance on your best route to Portuguese citizenship.</p>
+          <p>Every case is unique — let us help you understand your options before making any decisions.</p>
+
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>info@welbridge.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+
+            <h4>Request a Consultation</h4>
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select…</option>
+                <option value="NIF">NIF</option>
+                <option value="NISS">NISS</option>
+                <option value="Bank Account">Bank Account</option>
+                <option value="D7 Visa">D7 Visa</option>
+                <option value="D2 Visa">D2 Visa</option>
+                <option value="Digital Nomad">Digital Nomad</option>
+                <option value="Citizenship" selected>Citizenship</option>
+                <option value="Real Estate Advisory">Real Estate Advisory</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us your nationality, pathway interest (residency, marriage, descent, etc.), and any relevant dates."></textarea>
+            </div>
+
+            <div class="form-consent">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a> provided by WelBridge</label>
+            </div>
+
+            <button type="submit" class="btn btn-premium btn-full">
+              Request Free Consultation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Your European Future Starts Here</h2>
+      <p>Portuguese citizenship is within reach. Let us guide you through every step of the journey.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-premium btn-large">Request Free Consultation</a>
+        <a href="mailto:info@welbridge.com" class="btn btn-outline-white btn-large">Email Us Directly</a>
+      </div>
+      <p class="cta-price">Pricing: <span>Upon consultation</span> — Every case is evaluated individually</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+          </a>
+          <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="nif.html">Portugal NIF</a></li>
+            <li><a href="bank-account.html">Bank Account</a></li>
+            <li><a href="criminal-record.html">Criminal Record</a></li>
+            <li><a href="tax-representative.html">Tax Representative</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Visas</h4>
+          <ul>
+            <li><a href="d7-visa.html">D7 Visa</a></li>
+            <li><a href="d2-visa.html">D2 Visa</a></li>
+            <li><a href="digital-nomad-visa.html">Digital Nomad</a></li>
+            <li><a href="citizenship.html">Citizenship</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 WelBridge. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // SCROLL - Header fica com fundo sólido
+      const header = document.getElementById('header');
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+
+      // Mobile Menu Toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+      const setAria = () => {
+        if (!mobileToggle || !mobileMenu) return;
+        const isOpen = mobileMenu.classList.contains('active');
+        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      };
+
+      const closeMobileMenu = () => {
+        if (!mobileMenu || !mobileToggle) return;
+        mobileMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        setAria();
+      };
+
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = !mobileMenu.classList.contains('active');
+          mobileToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+          setAria();
+        });
+      }
+
+      // Close button click
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Fecha menu mobile ao clicar em qualquer link dentro dele
+      document.querySelectorAll('#mobileMenu a').forEach((a) => {
+        a.addEventListener('click', closeMobileMenu);
+      });
+
+      // Mobile Dropdown Toggle
+      document.querySelectorAll('.mobile-dropdown-toggle').forEach((button) => {
+        button.addEventListener('click', () => {
+          const dropdown = button.parentElement;
+          const isActive = dropdown.classList.toggle('active');
+          button.setAttribute('aria-expanded', String(isActive));
+        });
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach((button) => {
+        button.addEventListener('click', () => {
+          const item = button.parentElement;
+          const isActive = item.classList.contains('active');
+
+          document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#' || href.length <= 1) return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            closeMobileMenu();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Fix para links index.html#contact / index.html#about quando estiver no index
+      document.querySelectorAll('a[href="index.html#contact"], a[href="index.html#about"]').forEach((link) => {
+        link.addEventListener('click', function (e) {
+          const path = window.location.pathname;
+          if (path.endsWith('index.html') || path === '/' || path.endsWith('/')) {
+            e.preventDefault();
+            const hash = this.getAttribute('href').split('#')[1];
+            const target = document.getElementById(hash);
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // ESC fecha menu
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

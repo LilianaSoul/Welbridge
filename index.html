@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>WelBridge | Your Trusted Partner for Relocating to Portugal</title>
+    <meta name="description" content="Expert relocation services for Portugal. NIF, NISS, Bank Account, Visa, Real Estate, and Citizenship assistance. 4,740+ clients served with 97.5% success rate.">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Header Styles Override -->
+    <style>
+        .header { background: transparent; }
+        .header.scrolled { background: var(--primary); }
+        .header-inner { display: flex !important; align-items: center; justify-content: space-between; }
+        .logo img { height: 50px !important; width: auto !important; }
+        .header-right { display: flex !important; align-items: center; gap: 1rem; }
+        .mobile-toggle { display: flex !important; }
+        @media (min-width: 1024px) {
+            .mobile-toggle { display: none !important; }
+        }
+        @media (max-width: 1023px) {
+            .header-right .btn.btn-premium { display: none !important; }
+            .mobile-toggle { display: flex !important; }
+        }
+        @media (max-width: 768px) {
+            .logo img { height: 44px !important; }
+        }
+        @media (max-width: 576px) {
+            .logo img { height: 36px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies and our <a href="privacy.html">Privacy Policy</a>.</p>
+            <div class="cookie-buttons">
+                <button class="btn btn-premium btn-small" id="acceptCookies">Accept</button>
+                <button class="btn btn-outline btn-small" id="declineCookies">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+            </a>
+            <nav class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Services
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <a href="nif.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF</strong><span>Portuguese Tax Number</span></div>
+                                </a>
+                                <a href="tax-representative.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF Tax Representative</strong><span>Stay compliant with AT</span></div>
+                                </a>
+                                <a href="nif-address-update.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                                    <div class="dropdown-text"><strong>NIF Address Update</strong><span>Change your fiscal address</span></div>
+                                </a>
+                                <a href="niss.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                                    <div class="dropdown-text"><strong>NISS</strong><span>Social Security Number</span></div>
+                                </a>
+                                <a href="bank-account.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+                                    <div class="dropdown-text"><strong>Bank Account</strong><span>Open 100% remotely</span></div>
+                                </a>
+                                <a href="document-certification.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                                    <div class="dropdown-text"><strong>Certification & Authentication</strong><span>Document legalization</span></div>
+                                </a>
+                                <a href="criminal-record.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                                    <div class="dropdown-text"><strong>Criminal Record Certificate</strong><span>Official background check</span></div>
+                                </a>
+                                <a href="citizenship.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                                    <div class="dropdown-text"><strong>Portuguese Citizenship</strong><span>Path to EU passport</span></div>
+                                </a>
+                                <a href="lease-review.html" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                                    <div class="dropdown-text"><strong>Lease Agreement Review</strong><span>Protect your rental rights</span></div>
+                                </a>
+                                <a href="#contact" class="dropdown-item">
+                                    <div class="dropdown-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="14" r="3"/></svg></div>
+                                    <div class="dropdown-text"><strong>Real Estate Advisory</strong><span>Find your perfect property</span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+    <div class="lang-switch">
+        <a href="index.html" class="lang-btn active" data-lang="en">EN</a>
+        <a href="index-pt.html" class="lang-btn" data-lang="pt">PT</a>
+    </div>
+        <a href="#contact" class="btn btn-premium">Free Consultation</a>
+   </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+                    Services
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="nif.html">NIF</a></li>
+                    <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+                    <li><a href="nif-address-update.html">NIF Address Update</a></li>
+                    <li><a href="niss.html">NISS</a></li>
+                    <li><a href="bank-account.html">Bank Account</a></li>
+                    <li><a href="document-certification.html">Certification & Authentication</a></li>
+                    <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+                    <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+                    <li><a href="lease-review.html">Lease Agreement Review</a></li>
+                    <li><a href="#contact">Real Estate Advisory</a></li>
+                </ul>
+            </li>
+            <li><a href="visa-all.html">Visas</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="#contact" class="btn btn-premium">Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Trusted by 4,740+ clients worldwide
+                    </div>
+                    <h1>Your Trusted Partner for <span class="text-premium">Relocating to Portugal</span></h1>
+                    <p class="hero-description">From visa applications to citizenship — we transform bureaucratic complexity into seamless transitions. Your new chapter in Portugal starts here.</p>
+                    <div class="hero-ctas">
+                        <a href="pricing.html" class="btn btn-premium">
+                            Explore Services
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#about" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-value">4,740+</span>
+                            <span class="stat-label">Clients Served</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-value">97.5%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="stat-value">30+</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-globe">
+                        <div class="globe-ring"></div>
+                        <div class="globe">
+                            <div class="globe-sphere">
+                                <svg viewBox="0 0 200 200" class="globe-grid">
+                                    <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                                    <ellipse cx="100" cy="100" rx="90" ry="18" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.6"/>
+                                    <ellipse cx="100" cy="100" rx="18" ry="90" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+                                    <ellipse cx="100" cy="100" rx="45" ry="90" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
+                                    <ellipse cx="100" cy="100" rx="70" ry="90" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="0.5"/>
+                                    <circle cx="70" cy="65" r="5" fill="#DAA520"/>
+                                    <circle cx="70" cy="65" r="5" fill="none" stroke="#DAA520" stroke-width="2">
+                                        <animate attributeName="r" values="5;15;5" dur="2.5s" repeatCount="indefinite"/>
+                                        <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                                <div class="globe-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0 120 L0 60 Q360 100 720 60 Q1080 20 1440 80 L1440 120 Z" fill="#FAF8F5"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Global Network</h3>
+                    <p>Serving clients from 30+ countries with local expertise and international standards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Legal Compliance</h3>
+                    <p>All services fully compliant with Portuguese law. No shortcuts, no risks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>97.5% success rate with transparent processes and money-back guarantee.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Dedicated Support</h3>
+                    <p>Personal case manager for every client. We're with you every step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Services</span>
+                <h2>Everything You Need for Portugal</h2>
+                <p>Comprehensive relocation services designed to make your move smooth, legal, and stress-free.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-badge">Best Value</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M7 16h4"/></svg>
+                    </div>
+                    <h3>NIF Standard</h3>
+                    <p>Your essential first step. Required for banking, property purchases, and employment in Portugal.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10 business days</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price">From <strong>€45</strong></span>
+                        <a href="nif.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="service-badge">Most Popular</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M7 16h4"/></svg>
+                    </div>
+                    <h3>NIF Express</h3>
+                    <p>Fast-track NIF processing for those who need their tax number quickly. Priority handling included.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>5-7 business days</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price">From <strong>€67</strong></span>
+                        <a href="nif.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="service-badge">For Workers</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>NISS (Social Security)</h3>
+                    <p>Access healthcare, build pension rights, and work legally with full Portuguese benefits.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>~8 weeks</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price">From <strong>€189</strong></span>
+                        <a href="niss.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="service-badge">Essential</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                    </div>
+                    <h3>Bank Account</h3>
+                    <p>Open a Portuguese bank account 100% remotely. Essential for property and visa applications.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>~8 weeks</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price">From <strong>€250</strong></span>
+                        <a href="bank-account.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="service-badge">D7 Experts</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Visa Assistance</h3>
+                    <p>Expert guidance for D7, D2, Digital Nomad, and family reunification visas, everything in one place.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Time varies</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price"><strong>On Request</strong></span>
+                        <a href="visa-all.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <span class="service-badge">EU Passport</span>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>Portuguese Citizenship</h3>
+                    <p>Your path to European citizenship through naturalization, marriage, or ancestry.</p>
+                    <div class="service-details">
+                        <span class="service-delivery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Time varies</span>
+                    </div>
+                    <div class="service-footer">
+                        <span class="service-price"><strong>On Request</strong></span>
+                        <a href="citizenship.html" class="service-link">Learn more<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="services-cta">
+                <a href="pricing.html" class="btn btn-primary">View All Services & Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL ESTATE SECTION -->
+    <section class="real-estate" id="real-estate">
+        <div class="real-estate-bg">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80" alt="Luxury Portuguese property">
+            <div class="real-estate-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="real-estate-grid">
+                <div class="real-estate-content">
+                    <span class="section-label light">Real Estate Advisory</span>
+                    <h2>Find Your Perfect Home in Portugal</h2>
+                    <p class="real-estate-intro">Whether you're looking for a cozy apartment in Lisbon, a beachfront villa in the Algarve, or an investment property in Porto — our real estate experts guide you through every step of the Portuguese property market.</p>
+                    <div class="real-estate-features">
+                        <div class="re-feature">
+                            <div class="re-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg></div>
+                            <div class="re-feature-text"><h4>Property Search</h4><p>Access to exclusive listings and off-market properties across Portugal.</p></div>
+                        </div>
+                        <div class="re-feature">
+                            <div class="re-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+                            <div class="re-feature-text"><h4>Due Diligence</h4><p>Complete legal verification, title checks, and property inspections.</p></div>
+                        </div>
+                        <div class="re-feature">
+                            <div class="re-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                            <div class="re-feature-text"><h4>Negotiation Support</h4><p>Expert negotiation to secure the best price and terms for your property.</p></div>
+                        </div>
+                        <div class="re-feature">
+                            <div class="re-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                            <div class="re-feature-text"><h4>Contract Review</h4><p>Full legal review of purchase contracts and mortgage documentation.</p></div>
+                        </div>
+                    </div>
+                    <div class="real-estate-cta">
+                        <a href="#" class="btn btn-premium" onclick="alert('Coming Soon!'); return false;">Explore Properties<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                       <a href="mailto:info@welbridge.com" class="btn btn-outline-light">Schedule Consultation</a>
+                    </div>
+                </div>
+                <div class="real-estate-stats">
+                    <div class="re-stat-card">
+                        <div class="re-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                        <div class="re-stat-number">115+</div>
+                        <div class="re-stat-label">Properties Sold</div>
+                    </div>
+                    <div class="re-stat-card">
+                        <div class="re-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div class="re-stat-number">15+</div>
+                        <div class="re-stat-label">Regions Covered</div>
+                    </div>
+                    <div class="re-stat-card">
+                        <div class="re-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="re-stat-number">48h</div>
+                        <div class="re-stat-label">Average Response</div>
+                    </div>
+                    <div class="re-stat-card highlight">
+                        <div class="re-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                        <div class="re-stat-number">4.8</div>
+                        <div class="re-stat-label">Client Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Client Reviews</span>
+                <h2>What Our Clients Say</h2>
+                <p>Real experiences from people who trusted WelBridge for their Portugal journey.</p>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonials-wrapper">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"Got my NIF in 5 days. Exceptional service throughout. The team was responsive and made the whole process stress-free."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">SM</div>
+                                    <div class="testimonial-info"><strong>Samuel M.</strong><span>USA → Lisbon</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"D7 visa process made simple. Now happily living in Porto! WelBridge guided me through every step of the journey."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">ER</div>
+                                    <div class="testimonial-info"><strong>Emma R.</strong><span>UK → Porto</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"From NIF to apartment — WelBridge handled everything. Professional, efficient, and always available when I needed them."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">DM</div>
+                                    <div class="testimonial-info"><strong>David M.</strong><span>Canada → Cascais</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"The standard NIF service was perfect for my needs. Affordable and delivered exactly as promised within 15 days."</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">JK</div>
+                                    <div class="testimonial-info"><strong>Julia K.</strong><span>Germany → Lisbon</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"Excellent bank account service. Everything was done remotely and I received my card within 2 weeks. Highly recommend!"</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">MT</div>
+                                    <div class="testimonial-info"><strong>Michael T.</strong><span>Australia → Algarve</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-stars">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                </div>
+                                <p class="testimonial-text">"WelBridge made my citizenship application a breeze. Their knowledge of Portuguese law is outstanding. Thank you!"</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">AS</div>
+                                    <div class="testimonial-info"><strong>Ana S.</strong><span>Brazil → Lisbon</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous testimonial">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next testimonial">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-image about-image-1">
+                        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=600&q=80" alt="Professional team meeting">
+                    </div>
+                    <div class="about-image about-image-3">
+                        <img src="https://images.unsplash.com/photo-1536663815808-535e2280d2c2?w=600&q=80" alt="Modern premium office">
+                    </div>
+                    <div class="about-image about-image-4">
+                        <img src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?w=600&q=80" alt="Successful client partnership">
+                    </div>
+                    <div class="about-stats-card">
+                        <div class="about-stats-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <div class="about-stats-text">
+                            <strong>4,740+</strong>
+                            <span>Clients Served</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">About WelBridge</span>
+                    <h2>Built for Expats</h2>
+                    <p class="about-tagline">Your bridge to a new life in Portugal.</p>
+                    <p>We understand the dreams and challenges of relocating to a new country. Portugal offers an extraordinary quality of life, rich culture, and welcoming communities — but navigating the bureaucracy can be overwhelming.</p>
+                    <p>That's why WelBridge exists. We've helped over 4,740 clients from 30+ countries turn their Portuguese dreams into reality. Our expert team handles the complexity, so you can focus on what truly matters: embracing your new life in one of Europe's most beautiful destinations.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
+                            </div>
+                            <div class="about-feature-text">
+                                <h4>Global Reach</h4>
+                                <p>Operating across multiple continents with local expertise in Portuguese bureaucracy.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div class="about-feature-text">
+                                <h4>Transparent Pricing</h4>
+                                <p>Clear fees upfront with no hidden costs. What you see is what you pay.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="about-feature-text">
+                                <h4>Trust & Reliability</h4>
+                                <p>Building long-term relationships through consistent, dependable service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-content">
+                    <h2>Let's Build Your Portuguese Future Together</h2>
+                    <p>Schedule a free consultation with our relocation experts. We'll discuss your goals, answer your questions, and create a personalized plan tailored to your needs.</p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Free initial consultation</span>
+                        </div>
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Response within 24 hours</span>
+                        </div>
+                        <div class="cta-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>No obligation, no pressure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cta-form-wrapper">
+                    <form class="cta-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        <h4>Schedule a Consultation</h4>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="NIF Standard (€45)">NIF Standard (€45)</option>
+                                <option value="NIF Express (€67)">NIF Express (€67)</option>
+                                <option value="NISS (Social Security)">NISS (Social Security)</option>
+                                <option value="Bank Account">Bank Account</option>
+                                <option value="D7 Visa">D7 Visa</option>
+                                <option value="D2 Visa">D2 Visa</option>
+                                <option value="Digital Nomad Visa">Digital Nomad Visa</option>
+                                <option value="Real Estate Advisory">Real Estate Advisory</option>
+                                <option value="Citizenship">Citizenship</option>
+                                <option value="Other / Not Sure">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your situation and how we can help you..."></textarea>
+                        </div>
+                        <div class="form-consent">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a> provided by WelBridge.</label>
+                        </div>
+                        <button type="submit" class="btn btn-premium btn-full">
+                            Send Message
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-header">
+                    <span class="section-label">FAQ</span>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about our services and the relocation process.</p>
+                    <div class="faq-contact-card">
+                        <p><strong>Still have questions?</strong><br>Our team is ready to help with your specific situation.</p>
+                        <a href="#contact" class="btn btn-outline">Contact Support</a>
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long does it take to get a Portuguese NIF?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>With our Standard service, NIFs are delivered within 15 business days for €45. Our Express service delivers in 5-7 business days for €67. The NIF is permanent and never expires.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do I need to be in Portugal to use your services?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No! Most of our services can be completed 100% remotely. You can get your NIF, open a bank account, and even start visa applications from anywhere in the world.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What documents do I need for a D7 visa?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The D7 visa requires proof of regular passive income (minimum €760/month), valid passport, criminal record certificate, health insurance, proof of accommodation, and a Portuguese NIF. We provide a complete checklist and guide you through every step.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why do I need a fiscal representative?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Non-EU residents who obtain a Portuguese NIF are legally required to have a fiscal representative. This person or company receives tax correspondence on your behalf and ensures you stay compliant with Portuguese tax authorities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is your refund policy?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a money-back guarantee on most services. If your application is rejected due to our error, you'll receive a full refund. For rejections due to factors outside our control, we'll work with you to resolve the issue or provide a partial refund.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What's the difference between D7 and Digital Nomad visa?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The D7 visa is for individuals with passive income (pensions, investments, rental income). The Digital Nomad visa is for remote workers employed by companies outside Portugal or self-employed with international clients. Both lead to residency, but have different income requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/WB_Concept_1_White.svg" alt="WelBridge" style="height: 60px; width: auto;">
+                    </a>
+                    <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="nif.html">Portugal NIF</a></li>
+                        <li><a href="bank-account.html">Bank Account</a></li>
+                        <li><a href="niss.html">NISS Registration</a></li>
+                        <li><a href="tax-representative.html">Tax Representative</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Visas</h4>
+                    <ul>
+                        <li><a href="d7-visa.html">D7 Visa</a></li>
+                        <li><a href="d2-visa.html">D2 Visa</a></li>
+                        <li><a href="digital-nomad-visa.html">Digital Nomad</a></li>
+                        <li><a href="citizenship.html">Citizenship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WelBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

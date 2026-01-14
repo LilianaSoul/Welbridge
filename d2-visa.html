@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>D2 Entrepreneur Visa Portugal | WelBridge</title>
+    <meta name="description" content="Complete guide to the D2 Entrepreneur Visa for Portugal. Start your business in Europe with expert guidance from WelBridge.">
+    
+    <link rel="icon" href="images/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1D3557;
+            --primary-light: #2A4A73;
+            --premium: #DAA520;
+            --premium-dark: #B8860B;
+            --text: #1D3557;
+            --text-light: #5A6C7D;
+            --background: #FAF8F5;
+            --white: #FFFFFF;
+            --border: #E8E4DE;
+            --success: #2E7D32;
+            --warning: #D97706;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; overflow-x: hidden; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* =========================
+           HEADER (padronizado)
+        ========================= */
+        .header {
+            background: var(--primary);
+            padding: 16px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active { color: var(--premium); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--premium) 0%, var(--premium-dark) 100%);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(218, 165, 32, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.3);
+            color: var(--white);
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--white);
+        }
+
+        .btn-full { width: 100%; justify-content: center; }
+        .btn-large { padding: 16px 32px; font-size: 1.1rem; }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            padding: 8px 12px;
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lang-btn.active {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .lang-btn:hover { color: white; }
+
+        /* =========================
+           NAVIGATION & DROPDOWN (DESKTOP)
+        ========================= */
+        .nav-main { display: none; }
+        @media (min-width: 1024px) { .nav-main { display: block; } }
+
+        .nav-dropdown { position: relative; }
+        .nav-dropdown > .nav-link { display: flex; align-items: center; gap: 0.375rem; }
+        .nav-dropdown > .nav-link svg { transition: transform 0.3s ease; }
+        .nav-dropdown:hover > .nav-link svg { transform: rotate(180deg); }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            width: 340px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 0.75rem;
+            margin-top: 1rem;
+            z-index: 2500;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-grid { display: grid; grid-template-columns: 1fr; gap: 0.125rem; }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.75rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover { background: var(--background); }
+
+        .dropdown-icon {
+            width: 40px; height: 40px;
+            background: var(--background);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover .dropdown-icon { background: var(--primary); }
+        .dropdown-icon svg { width: 20px; height: 20px; stroke: var(--primary); transition: all 0.3s ease; }
+        .dropdown-item:hover .dropdown-icon svg { stroke: white; }
+
+        .dropdown-text { display: flex; flex-direction: column; }
+        .dropdown-text strong { font-size: 0.875rem; font-weight: 600; color: var(--primary); }
+        .dropdown-text span { font-size: 0.75rem; color: var(--text-light); margin-top: 0.125rem; }
+
+        @media (max-width: 1023px) { .dropdown-menu { display: none; } }
+
+        /* =========================
+           MOBILE TOGGLE
+        ========================= */
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 1024px) { .mobile-toggle { display: none; } }
+
+        .mobile-toggle span {
+            position: relative;
+            width: 20px; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before,
+        .mobile-toggle span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%; height: 2px;
+            background: white;
+            transition: 0.3s ease;
+        }
+
+        .mobile-toggle span::before { top: -6px; }
+        .mobile-toggle span::after { bottom: -6px; }
+        .mobile-toggle.active span { background: transparent; }
+        .mobile-toggle.active span::before { top: 0; transform: rotate(45deg); }
+        .mobile-toggle.active span::after { bottom: 0; transform: rotate(-45deg); }
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 3000;
+            padding: 96px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+            width: 100vw;
+        }
+
+        .mobile-menu.active { transform: translateX(0); }
+
+        /* Mobile Menu Close Button */
+        .mobile-menu-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            z-index: 10;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-close svg {
+            color: white;
+        }
+
+        .mobile-menu-links { flex: 1; list-style: none; margin: 0; padding: 0; }
+        .mobile-menu-links > li { margin-bottom: 24px; }
+        .mobile-menu-links > li > a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+        }
+
+        .mobile-menu-footer {
+            position: sticky;
+            bottom: 0;
+            padding-top: 16px;
+            padding-bottom: 8px;
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .mobile-menu-footer .btn { width: 100%; justify-content: center; }
+
+        /* =========================
+           MOBILE DROPDOWN
+        ========================= */
+        .mobile-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: white;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-toggle svg { transition: transform 0.3s ease; flex-shrink: 0; }
+        .mobile-dropdown.active .mobile-dropdown-toggle svg { transform: rotate(180deg); }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding-left: 16px;
+            margin-top: 0;
+            list-style: none;
+        }
+
+        .mobile-dropdown.active .mobile-dropdown-menu { max-height: 700px; margin-top: 16px; }
+        .mobile-dropdown-menu li { margin-bottom: 14px; }
+        .mobile-dropdown-menu a {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+        .mobile-dropdown-menu a:hover { color: var(--premium); }
+
+        /* =========================
+           RESPONSIVE HEADER
+        ========================= */
+        @media (max-width: 768px) {
+            .logo img { height: 44px; }
+            .header-right .btn { display: none; }
+            .lang-btn { padding: 6px 10px; font-size: 0.8rem; }
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+        .hero {
+            padding: 80px 0 0;
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero-content {
+            padding: 80px 60px 80px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--premium);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span { color: var(--premium); }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+            padding: 28px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-highlight { text-align: center; }
+
+        .hero-highlight-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero-highlight-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        /* Hero Image */
+        .hero-image {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+        }
+
+        .hero-image-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-image-icon {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            border: 2px solid rgba(218, 165, 32, 0.5);
+        }
+
+        .hero-image-icon svg {
+            width: 50px;
+            height: 50px;
+            color: var(--premium);
+        }
+
+        .hero-image-content h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: var(--white);
+        }
+
+        .hero-image-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 400px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           SECTION STYLES
+        ========================= */
+        .section-label {
+            display: inline-block;
+            color: var(--premium);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-subtitle { margin: 0 auto; }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--premium);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(29, 53, 87, 0.1);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--premium);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Who Section */
+        .who-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .who-content h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .who-content > p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .who-list { list-style: none; }
+
+        .who-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .who-list li:last-child { border-bottom: none; }
+
+        .who-list svg {
+            width: 24px;
+            height: 24px;
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .who-list span {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .who-visual { position: relative; }
+
+        .who-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 24px;
+            padding: 48px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .who-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(218,165,32,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .who-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .who-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .who-card p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .who-card-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .who-stat {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .who-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--premium);
+            display: block;
+        }
+
+        .who-stat-label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* Requirements Section */
+        .requirements-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .requirement-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--premium), var(--primary));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(29, 53, 87, 0.1);
+        }
+
+        .requirement-number {
+            width: 50px;
+            height: 50px;
+            background: var(--background);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .requirement-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .requirement-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+
+        .process-section .section-label { color: var(--premium); }
+        .process-section .section-title { color: var(--white); }
+        .process-section .section-subtitle { color: rgba(255,255,255,0.8); }
+
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            right: 80px;
+            height: 4px;
+            background: rgba(218, 165, 32, 0.3);
+            border-radius: 2px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+            max-width: 220px;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number span {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .process-step h3 {
+            font-size: 1.15rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .process-step p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            background: var(--background);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-family: inherit;
+            gap: 16px;
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            color: var(--premium);
+        }
+
+        .faq-item.active .faq-question svg { transform: rotate(45deg); }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-light);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--background);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-content .section-title { margin-bottom: 16px; }
+
+        .contact-content p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .contact-info { margin-top: 32px; }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info-item svg {
+            width: 20px;
+            height: 20px;
+            color: var(--premium);
+        }
+
+        .contact-info-item span {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .contact-features {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text);
+            font-size: 0.9375rem;
+        }
+
+        .contact-feature svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--premium);
+            flex-shrink: 0;
+        }
+
+        .contact-form-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(29, 53, 87, 0.08);
+        }
+
+        .contact-form-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--premium);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231D3557' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 18px;
+            padding-right: 45px;
+        }
+
+        .form-group textarea { resize: vertical; }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 3px;
+            cursor: pointer;
+            accent-color: var(--premium);
+            flex-shrink: 0;
+        }
+
+        .form-checkbox label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .form-checkbox a {
+            color: var(--premium);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .form-checkbox a:hover { text-decoration: underline; }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 24px;
+            padding: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(218,165,32,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-card h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .cta-price {
+            margin-top: 24px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cta-price span {
+            color: var(--premium);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            padding: 60px 0 30px;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h4 {
+            color: var(--premium);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column li { margin-bottom: 12px; }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover { color: var(--premium); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 992px) {
+            .hero-split { grid-template-columns: 1fr; }
+            .hero-content { padding: 60px 0; }
+            .hero-image { min-height: 450px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-highlights { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .who-grid { grid-template-columns: 1fr; }
+            .requirements-grid { grid-template-columns: 1fr; }
+            .process-timeline { flex-direction: column; gap: 40px; }
+            .process-timeline::before { display: none; }
+            .process-step { max-width: 100%; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-highlights { grid-template-columns: 1fr; gap: 20px; }
+            .section-title { font-size: 1.8rem; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-cta { flex-direction: column; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-card { padding: 48px 24px; }
+            .contact-form-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/WB_Concept_1_White.svg" alt="WelBridge">
+            </a>
+
+            <nav class="nav-main">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">
+                            Services
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <a href="nif.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                            <path d="M3 10h18"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF</strong>
+                                        <span>Portuguese Tax Number</span>
+                                    </div>
+                                </a>
+                                <a href="tax-representative.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="9" cy="7" r="4"/>
+                                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF Tax Representative</strong>
+                                        <span>Stay compliant with AT</span>
+                                    </div>
+                                </a>
+                                <a href="nif-address-update.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NIF Address Update</strong>
+                                        <span>Change your fiscal address</span>
+                                    </div>
+                                </a>
+                                <a href="niss.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>NISS</strong>
+                                        <span>Social Security Number</span>
+                                    </div>
+                                </a>
+                                <a href="bank-account.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="1" y="4" width="22" height="16" rx="2"/>
+                                            <path d="M1 10h22"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Bank Account</strong>
+                                        <span>Open 100% remotely</span>
+                                    </div>
+                                </a>
+                                <a href="document-certification.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <polyline points="22 4 12 14.01 9 11.01"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Certification & Authentication</strong>
+                                        <span>Document legalization</span>
+                                    </div>
+                                </a>
+                                <a href="criminal-record.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                            <polyline points="14 2 14 8 20 8"/>
+                                            <line x1="16" y1="13" x2="8" y2="13"/>
+                                            <line x1="16" y1="17" x2="8" y2="17"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Criminal Record Certificate</strong>
+                                        <span>Official background check</span>
+                                    </div>
+                                </a>
+                                <a href="citizenship.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M2 12h20"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Portuguese Citizenship</strong>
+                                        <span>Path to EU passport</span>
+                                    </div>
+                                </a>
+                                <a href="lease-review.html" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <polyline points="9 22 9 12 15 12 15 22"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Lease Agreement Review</strong>
+                                        <span>Protect your rental rights</span>
+                                    </div>
+                                </a>
+                                <a href="index.html#contact" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                            <circle cx="12" cy="14" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <strong>Real Estate Advisory</strong>
+                                        <span>Find your perfect property</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="visa-all.html" class="nav-link">Visa</a></li>
+                    <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                    <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="lang-switch">
+                    <a href="d2-visa.html" class="lang-btn active">EN</a>
+                    <a href="d2-visa-pt.html" class="lang-btn">PT</a>
+                </div>
+                <a href="#contact" class="btn btn-premium">Free Consultation</a>
+            </div>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-dropdown-toggle" type="button" aria-expanded="false">
+                    Services
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="nif.html">NIF</a></li>
+                    <li><a href="tax-representative.html">NIF Tax Representative</a></li>
+                    <li><a href="nif-address-update.html">NIF Address Update</a></li>
+                    <li><a href="niss.html">NISS</a></li>
+                    <li><a href="bank-account.html">Bank Account</a></li>
+                    <li><a href="document-certification.html">Certification & Authentication</a></li>
+                    <li><a href="criminal-record.html">Criminal Record Certificate</a></li>
+                    <li><a href="citizenship.html">Portuguese Citizenship</a></li>
+                    <li><a href="lease-review.html">Lease Agreement Review</a></li>
+                    <li><a href="index.html#contact">Real Estate Advisory</a></li>
+                </ul>
+            </li>
+            <li><a href="visa-all.html">Visas</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <a href="#contact" class="btn btn-premium">Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-split">
+                <div class="hero-content">
+                    <span class="hero-label">Entrepreneur Visa</span>
+                    <h1>Launch Your Business in <span>Portugal</span></h1>
+                    <p class="hero-description">The D2 Visa is your gateway to European entrepreneurship. Start a company, invest in an existing business, or work as an independent professional — all while building a path to EU residency and citizenship.</p>
+                    
+                    <div class="hero-highlights">
+                        <div class="hero-highlight">
+                            <span class="hero-highlight-value">No Minimum</span>
+                            <span class="hero-highlight-label">Investment Required</span>
+                        </div>
+                        <div class="hero-highlight">
+                            <span class="hero-highlight-value">5 Years</span>
+                            <span class="hero-highlight-label">Path to Citizenship</span>
+                        </div>
+                        <div class="hero-highlight">
+                            <span class="hero-highlight-value">29 Countries</span>
+                            <span class="hero-highlight-label">Schengen Access</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-premium btn-large">Free Eligibility Check</a>
+                        <a href="#benefits" class="btn btn-outline btn-large">See Benefits</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Business and entrepreneurship">
+                    <div class="hero-image-content">
+                        <div class="hero-image-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h2>Build Your Future in Europe</h2>
+                        <p>Join thousands of entrepreneurs who chose Portugal as their base for European expansion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why Choose Portugal?</span>
+                <h2 class="section-title">The D2 Visa Advantage</h2>
+                <p class="section-subtitle">More than just a visa — it's your ticket to the European market and a new quality of life.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Schengen Freedom</h3>
+                    <p>Travel visa-free across 29 European countries. Perfect for networking and expanding your business connections.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Family Reunification</h3>
+                    <p>Bring your spouse, children, and dependent parents. Your family gets the same residency rights as you.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <h3>Tax Benefits</h3>
+                    <p>Access to Portugal's favorable tax regime for entrepreneurs. Potential benefits under the new IFICI program.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Path to Citizenship</h3>
+                    <p>After 5 years of legal residency, apply for Portuguese citizenship and gain an EU passport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Is It For Section -->
+    <section class="who-section">
+        <div class="container">
+            <div class="who-grid">
+                <div class="who-content">
+                    <span class="section-label">Who Can Apply?</span>
+                    <h2>Is the D2 Visa Right for You?</h2>
+                    <p>The D2 Entrepreneur Visa is designed for non-EU citizens who want to establish themselves professionally in Portugal. If any of these describe you, you may be eligible:</p>
+                    <ul class="who-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Entrepreneurs</strong> planning to start a new company in Portugal</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Business owners</strong> wanting to open a branch of an existing company</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Investors</strong> looking to buy shares or acquire a Portuguese business</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>Freelancers & consultants</strong> with service contracts in Portugal</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span><strong>UK entrepreneurs</strong> seeking to regain EU market access post-Brexit</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="who-visual">
+                    <div class="who-card">
+                        <div class="who-card-content">
+                            <h3>Flexible Requirements</h3>
+                            <p>Unlike other investment visas, the D2 has no minimum capital requirement. Focus on your business plan and demonstrate financial viability — that's what matters.</p>
+                            <div class="who-card-stats">
+                                <div class="who-stat">
+                                    <span class="who-stat-value">€0</span>
+                                    <span class="who-stat-label">Minimum Investment</span>
+                                </div>
+                                <div class="who-stat">
+                                    <span class="who-stat-value">Any</span>
+                                    <span class="who-stat-label">Business Sector</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="requirements-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What You Need</span>
+                <h2 class="section-title">Key Requirements</h2>
+                <p class="section-subtitle">The D2 Visa focuses on your business potential rather than large capital investments.</p>
+            </div>
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-number">1</div>
+                    <h3>Business Plan</h3>
+                    <p>A structured plan demonstrating your business's viability, economic contribution, and potential for job creation in Portugal. Must show clear objectives and financial projections.</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-number">2</div>
+                    <h3>Financial Proof</h3>
+                    <p>Evidence of sufficient funds to establish and operate your business, plus living expenses in Portugal. Minimum €10,440 per year (based on Portuguese minimum wage) for personal subsistence.</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-number">3</div>
+                    <h3>Clean Criminal Record</h3>
+                    <p>Criminal record certificates from your home country and any country where you've resided for more than one year. Certificates must be recent (within 3 months).</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-number">4</div>
+                    <h3>Health Insurance</h3>
+                    <p>Valid travel medical insurance covering your initial period in Portugal until you gain access to the national healthcare system as a resident.</p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-number">5</div>
+                    <h3>Portuguese NIF</h3>
+                    <p>Tax identification number in Portugal, required for all business and financial activities. <a href="nif.html" style="color: var(--premium);">We can help you get one.</a></p>
+                </div>
+                <div class="requirement-card">
+                    <div class="requirement-number">6</div>
+                    <h3>Company Documents</h3>
+                    <p>If buying an existing business: company registration, contracts, and financial statements. If starting new: proof of capital or Portuguese bank statement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Journey</span>
+                <h2 class="section-title">From Application to Residency</h2>
+                <p class="section-subtitle">A clear path to your Portuguese business venture.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number"><span>1</span></div>
+                    <h3>Consultation</h3>
+                    <p>We assess your eligibility and help structure your business plan for the visa application.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number"><span>2</span></div>
+                    <h3>Documentation</h3>
+                    <p>Gather and prepare all required documents, including business plan, financial proof, and certificates.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number"><span>3</span></div>
+                    <h3>Visa Application</h3>
+                    <p>Submit your D2 Visa application at the Portuguese consulate. Processing takes approximately 60 days.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number"><span>4</span></div>
+                    <h3>Arrive & Apply</h3>
+                    <p>Enter Portugal within 4 months and apply for your residence permit at AIMA. Valid for 2 years, renewable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        How much do I need to invest for the D2 Visa?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        There is no minimum investment requirement for the D2 Visa. However, you must demonstrate that you have sufficient funds to start and sustain your business, plus living expenses in Portugal (approximately €10,440 per year). Your business plan must show financial viability.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How long can I stay in Portugal with the D2 Visa?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        The D2 Visa itself is valid for 4 months, during which you must enter Portugal and apply for your residence permit. The residence permit is initially valid for 2 years and can be renewed for 3 more years. After 5 years, you can apply for permanent residency or citizenship.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's the difference between D2 and D7 Visa?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        The D2 Visa is for entrepreneurs and business owners who plan to actively work and run a business in Portugal. The D7 Visa is for people with passive income (pensions, investments, rental income) who want to live in Portugal without working. If you want to be professionally active, D2 is the right choice.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I bring my family with me?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, the D2 Visa allows for family reunification. Your spouse, children under 18, dependent adult children who are studying, parents, and minor siblings can all join you and receive the same residency rights. You'll need to prove sufficient income to support them (50% extra for spouse, 30% per child).
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How much time must I spend in Portugal?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        To maintain your residency status, you must spend a continuous period of at least 6 months in Portugal each year, or alternatively 16 months total over any 2-year period. This ensures you maintain genuine ties to Portugal while running your business.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What types of businesses are allowed?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        The D2 Visa is flexible and accommodates virtually any legal business sector. From cafes and restaurants to tech startups, consulting firms, and real estate agencies — there's no restriction on business type. You also don't need approval from a business incubator, unlike some startup visa programs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-content">
+                    <span class="section-label">Start Your Journey</span>
+                    <h2 class="section-title">Free Eligibility Consultation</h2>
+                    <p>Not sure if the D2 Visa is right for your situation? Our team will evaluate your profile, discuss your business plans, and advise on the best pathway to Portuguese residency.</p>
+                    <p>Every entrepreneur's situation is unique — let us help you find the right approach.</p>
+                    
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Free initial consultation
+                        </div>
+                        <div class="contact-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Personalized visa assessment
+                        </div>
+                        <div class="contact-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Response within 24 hours
+                        </div>
+                        <div class="contact-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            No obligation, no pressure
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>info@welbridge.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-card">
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="bot-field">
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <h4>Get Your Free Consultation</h4>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="visa-type">Visa Interest</label>
+                            <select id="visa-type" name="visa-type" required>
+                                <option value="">Select a service...</option>
+                                <option value="NIF Standard (€45)">NIF Standard (€45)</option>
+                                <option value="NIF Express (€67)">NIF Express (€67)</option>
+                                <option value="NISS (Social Security)">NISS (Social Security)</option>
+                                <option value="Bank Account">Bank Account</option>
+                                <option value="D7 Visa">D7 Visa</option>
+                                <option value="D2 Visa" selected>D2 Visa</option>
+                                <option value="Digital Nomad Visa">Digital Nomad Visa</option>
+                                <option value="Real Estate Advisory">Real Estate Advisory</option>
+                                <option value="Citizenship">Citizenship</option>
+                                <option value="Other / Not Sure">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Situation</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Your current country, income type, goals..."></textarea>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I agree to the <a href="terms.html">Terms & Conditions</a> and <a href="privacy.html">Privacy Policy</a> provided by WelBridge.</label>
+                        </div>
+                        <button type="submit" class="btn btn-premium btn-full btn-large">
+                            Request Free Consultation
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-card-content">
+                    <h2>Your European Business Awaits</h2>
+                    <p>Portugal is consistently ranked among the best countries for entrepreneurs. Low bureaucracy, strategic location, and access to 450 million EU consumers — your opportunity starts here.</p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-premium btn-large">Book Free Consultation</a>
+                        <a href="mailto:info@welbridge.com" class="btn btn-outline-white btn-large">Email Us Directly</a>
+                    </div>
+                    <p class="cta-price">Pricing: <span>Upon consultation</span> — Every case is evaluated individually</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/WB_Concept_1_White.svg" alt="WelBridge" style="height: 60px; width: auto;">
+                    </a>
+                    <p>Your trusted partner for relocating to Portugal. Expert guidance through every step of your journey.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="nif.html">Portugal NIF</a></li>
+                        <li><a href="bank-account.html">Bank Account</a></li>
+                        <li><a href="criminal-record.html">Criminal Record</a></li>
+                        <li><a href="tax-representative.html">Tax Representative</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Visas</h4>
+                    <ul>
+                        <li><a href="d7-visa.html">D7 Visa</a></li>
+                        <li><a href="d2-visa.html">D2 Visa</a></li>
+                        <li><a href="digital-nomad-visa.html">Digital Nomad</a></li>
+                        <li><a href="citizenship.html">Citizenship</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WelBridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+            const setAria = () => {
+                if (!mobileToggle || !mobileMenu) return;
+                const isOpen = mobileMenu.classList.contains('active');
+                mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+                mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            const closeMobileMenu = () => {
+                if (!mobileMenu || !mobileToggle) return;
+                mobileMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                setAria();
+            };
+
+            if (mobileToggle && mobileMenu) {
+                mobileToggle.addEventListener('click', () => {
+                    const isOpen = !mobileMenu.classList.contains('active');
+                    mobileToggle.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    document.documentElement.style.overflow = isOpen ? 'hidden' : '';
+                    document.body.style.overflow = isOpen ? 'hidden' : '';
+                    setAria();
+                });
+            }
+
+            // Close button click
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', closeMobileMenu);
+            }
+
+            // Fecha menu mobile ao clicar em qualquer link dentro dele
+            document.querySelectorAll('#mobileMenu a').forEach((a) => {
+                a.addEventListener('click', closeMobileMenu);
+            });
+
+            // Mobile Dropdown Toggle
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const dropdown = button.parentElement;
+                    const isActive = dropdown.classList.toggle('active');
+                    button.setAttribute('aria-expanded', String(isActive));
+                });
+            });
+
+            // FAQ Accordion
+            document.querySelectorAll('.faq-question').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const item = button.parentElement;
+                    const isActive = item.classList.contains('active');
+
+                    document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+
+            // Fix: links index.html#contact / index.html#about
+            document.querySelectorAll('a[href="index.html#contact"], a[href="index.html#about"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const path = window.location.pathname;
+                    if (path.endsWith('index.html') || path === '/' || path.endsWith('/')) {
+                        e.preventDefault();
+                        const id = this.getAttribute('href').split('#')[1];
+                        const target = document.getElementById(id);
+                        if (target) target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // ESC fecha menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
